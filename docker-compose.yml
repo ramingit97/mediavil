@@ -4,5 +4,6 @@ services:
     image: mediawil-web
     container_name: mediawil-web
     restart: unless-stopped
+    # Bind to localhost only — the host nginx (reverse proxy + SSL) sits in front.
     ports:
-      - "80:80"
+      - "127.0.0.1:8080:80"
