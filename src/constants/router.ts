@@ -1,0 +1,18 @@
+export const ROUTER = {
+  Home: "/",
+  Home2: "home2",
+  Home3: "/home3",
+  Europe: "/EuropePlus",
+  Retro: "/retroFm",
+  NovoeRadio: "/novoeRadio",
+  RuskoeRadio: "/ruskoeRadio",
+  RoadRadio: "/roadRadio",
+  Studio: "/studio",
+  RadioMir: "/radioMir",
+  About: "/about",
+  Stations: "/stations",
+  Services: "/services",
+  Contacts: "/contacts",
+  Details: "/details",
+  NotFound: "/notFound",
+};

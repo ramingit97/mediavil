@@ -1,0 +1,220 @@
+.hero {
+  min-height: 820px;
+  background: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: -300px;
+
+  transform: translateX(-50%);
+
+  width: 1600px;
+  height: 1600px;
+
+  border-radius: 50%;
+
+  background: repeating-radial-gradient(
+    circle,
+    #f9f9f9 0px,
+    #f0f0f0 50px,
+    transparent 2px,
+    transparent 110px
+  );
+
+  z-index: 1;
+}
+
+
+
+.center {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 180px;
+}
+
+.center h1 {
+  margin: 0 0 34px;
+
+  text-align: center;
+  font-size: 74px;
+  line-height: 0.95;
+  font-weight: 900;
+  color: #444;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 56px;
+  padding: 0 36px;
+
+  border-radius: 999px;
+
+  background: #e30613;
+  color: white;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition: 0.25s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.logo {
+  position: absolute;
+  z-index: 4;
+
+  object-fit: contain;
+}
+
+/* individual positions */
+
+.studio {
+  width: 130px;
+
+  top: 170px;
+  left: 90px;
+
+  transform: rotate(-5deg);
+}
+
+.europa {
+  width: 140px;
+
+  left: 170px;
+  top: 290px;
+
+  transform: rotate(-15deg);
+}
+
+.novoe {
+  width: 130px;
+
+  left: 180px;
+  bottom: 210px;
+
+  transform: rotate(-8deg);
+}
+
+.retro {
+  width: 120px;
+
+  top: 170px;
+  right: 80px;
+
+  transform: rotate(-8deg);
+}
+
+.russia {
+  width: 120px;
+
+  right: 200px;
+  top: 350px;
+
+  transform: rotate(-10deg);
+}
+
+.road {
+  width: 120px;
+
+  right: 180px;
+  bottom: 210px;
+
+  transform: rotate(-6deg);
+}
+
+.mir {
+  width: 80px;
+
+  bottom: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+  .hero {
+    min-height: 740px;
+  }
+
+  .hero::before {
+    top: 40px;
+    width: 400px;
+    height: 850px;
+  }
+
+  .center {
+    padding-top: 100px;
+  }
+
+  .center h1 {
+    font-size: 48px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    height: 30px;
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  .studio {
+    width: 62px;
+    top: 180px;
+    left: 18px;
+  }
+
+  .retro {
+    width: 70px;
+    top: 200px;
+    right: -12px;
+  }
+
+  .europa {
+    width: 78px;
+    left: -8px;
+    top: 480px;
+  }
+
+  .russia {
+    width: 82px;
+    right: -8px;
+    top: 500px;
+  }
+
+  .novoe {
+    width: 85px;
+    left: 96px;
+    bottom: 150px;
+  }
+
+  .road {
+    width: 90px;
+    right: 85px;
+    bottom: 120px;
+  }
+
+  .mir {
+    display: none;
+  }
+}

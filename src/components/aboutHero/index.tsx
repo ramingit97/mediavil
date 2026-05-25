@@ -1,0 +1,107 @@
+import Navbar from "@/components/navbar";
+import Title from "@/components/title";
+import style from "./aboutHero.module.css";
+
+function AboutHero() {
+  const cards = [
+    "9 лет безупречной репутации\nна медиарынке",
+
+    "Прямой доступ\nк федеральным радио-брендам\nбез посредников",
+
+    "Гибкая сегментация:\nот молодежной аудитории Studio 21\nдо лояльных слушателей Дорожного Радио",
+
+    "Синергия каналов:\nобъединяем радио, наружную\nрекламу и кино в одну мощную стратегию",
+  ];
+
+  return (
+    <section className={style.page}>
+      <Navbar variant="gray" />
+
+      <div className={style.hero}>
+        <Title variant1="Крупнейший медиахолдинг Дальнего Востока" />
+
+        <div className={style.content}>
+          <div className={style.left}>
+            <div className={style.block}>
+              <h3>9 лет в эфире и в центре событий</h3>
+
+              <p>
+                Уже девять лет мы создаем единое информационное и музыкальное
+                пространство для жителей Дальнего Востока.
+              </p>
+            </div>
+
+            <div className={style.block}>
+              <h3>География и охват</h3>
+
+              <p>
+                Мы обеспечиваем качественное вещание и эффективное рекламное
+                сопровождение.
+              </p>
+
+              <ul>
+                <li>
+                  <b>Владивосток и Хабаровск</b> — крупнейшие деловые центры
+                </li>
+
+                <li>
+                  <b>Находка, Уссурийск, Арсеньев и Партизанск</b>—
+                  стратегически важные точки вещания
+                </li>
+              </ul>
+            </div>
+
+            <div className={style.block}>
+              <h3>Наши активы: Экспертиза в охватах</h3>
+
+              <ul>
+                <li>
+                  <b>Энергия и тренды:</b> Европа Плюс, Новое Радио
+                </li>
+
+                <li>
+                  <b>Традиции и доверие:</b> Русское Радио, Ретро FM
+                </li>
+              </ul>
+            </div>
+
+            <div className={style.block}>
+              <h3>Больше, чем просто радио</h3>
+
+              <ul>
+                <li>
+                  <b>Digital Audio:</b> размещение на стриминговых платформах
+                </li>
+
+                <li>
+                  <b>Outdoor:</b> наружная реклама
+                </li>
+
+                <li>
+                  <b>Cinema:</b> видеореклама в кинотеатрах
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={style.right}>
+            <h2>
+              Наша миссия — трансформировать охваты в продажи, создавая
+              качественную связь между брендами и жителями Дальнего Востока
+            </h2>
+
+            <div className={style.cards}>
+              {cards.map((item, index) => (
+                <div className={style.card} key={index}>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default AboutHero;

@@ -1,0 +1,45 @@
+.top {
+  background-color: #f9d800;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 12px 24px;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: scroll 15s linear infinite;
+}
+
+
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.item img {
+  width: 20px;
+  height: 20px;
+}
+
+.item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

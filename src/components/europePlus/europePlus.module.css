@@ -1,0 +1,527 @@
+.page {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  width: 980px;
+  height: 980px;
+  border-radius: 50%;
+  background: var(--circle-bg);
+  left: -170px;
+  top: -210px;
+  z-index: 0;
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  width: 1180px;
+  height: 1180px;
+  border-radius: 50%;
+  border: 42px solid var(--ring-border);
+  outline: 22px solid var(--ring-outline);
+  left: -340px;
+  top: -320px;
+  z-index: 1;
+}
+
+.navOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+
+  background: linear-gradient(to bottom, var(--nav-shadow), transparent);
+
+  z-index: 3;
+  pointer-events: none;
+}
+
+.mediaBtn {
+  margin-top: 28px;
+  border: none;
+  border-radius: 40px;
+
+  background: var(--media-btn-bg);
+  color: var(--media-btn-text);
+
+  padding: 17px 35px;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.play {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: var(--play-bg);
+  color: white;
+  font-size: 18px;
+}
+
+.frequencyCard {
+  width: 360px;
+  min-height: 86px;
+  background: white;
+  border-radius: 18px;
+  color: #1f1f1f;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 24px;
+  box-shadow: 0 0 0 4px var(--card-shadow);
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  padding: 80px 30px 80px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.left {
+  width: 360px;
+  flex-shrink: 0;
+  padding-top: 40px;
+}
+
+.imagesBox {
+  position: relative;
+  width: 440px;
+  height: 560px;
+  margin-top: 50px;
+  flex-shrink: 0;
+}
+
+.visual {
+  /* width: 260px; */
+  /* flex-direction: row; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  position: static;
+  width: 175px;
+  color: white !important;
+  margin-bottom: 40px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  text-align: center;
+  margin-top: 20px;
+}
+
+.breadcrumb {
+  position: absolute;
+  z-index: 5;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  font-size: 12px;
+}
+
+.breadcrumb h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: white !important;
+  padding-bottom: 15px;
+}
+
+.left p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--description-color);
+}
+
+.frequencyList {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.frequencyCard h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+.frequencyCard h4 span {
+  color: #777;
+  font-weight: 500;
+}
+
+.frequencyCard p {
+  margin: 0;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.frequencyCard strong {
+  font-size: 14px;
+  color: #555;
+}
+
+.mainGirl {
+  position: absolute;
+  left: 50px;
+  top: 95px;
+  width: 350px;
+  border-radius: 18px;
+  z-index: 4;
+}
+
+.smallOne {
+  position: absolute;
+  left: 0;
+  top: -30px;
+  width: 170px;
+  border-radius: 18px;
+  z-index: 5;
+}
+
+.smallTwo {
+  position: absolute;
+  right: -20px;
+  bottom: -140px;
+  width: 210px;
+  border-radius: 18px;
+  z-index: 6;
+}
+
+.statItem h3 {
+  margin: 0 0 10px;
+
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 800;
+
+  color: white;
+}
+
+.statItem p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    max-width: 1040px;
+    padding: 70px 24px 70px;
+    gap: 28px;
+  }
+
+  .left {
+    width: 320px;
+  }
+
+  .imagesBox {
+    width: 360px;
+    height: 500px;
+  }
+
+  .mainGirl {
+    width: 300px;
+    left: 30px;
+  }
+
+  .smallOne {
+    width: 140px;
+  }
+
+  .smallTwo {
+    width: 175px;
+    right: -10px;
+  }
+
+  .logo {
+    width: 145px;
+  }
+
+  .frequencyCard {
+    width: 320px;
+  }
+}
+
+@media (max-width: 991px) {
+  .page::before {
+    left: auto;
+    right: -260px;
+    top: -260px;
+    width: 850px;
+    height: 850px;
+  }
+
+  .page::after {
+    left: auto;
+    right: -340px;
+    top: -340px;
+    width: 1000px;
+    height: 1000px;
+  }
+
+  .breadcrumb {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding-top: 24px;
+  }
+
+  .breadcrumb h1 {
+    font-size: 34px;
+  }
+
+  .hero {
+    max-width: 720px;
+    padding: 45px 24px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .imagesBox {
+    order: 1;
+    width: 100%;
+    height: 300px;
+  }
+
+  .left {
+    order: 2;
+    width: 100%;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .visual {
+    order: 3;
+    width: 100%;
+    margin-top: 36px;
+    padding: 50px 20px 70px;
+  }
+
+  .mainGirl {
+    width: 240px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 24px;
+  }
+
+  .smallOne {
+    width: 150px;
+    top: 55px;
+    left: 70px;
+    border-radius: 22px;
+  }
+
+  .smallTwo {
+    width: 155px;
+    top: 55px;
+    right: 70px;
+    bottom: auto;
+    border-radius: 22px;
+  }
+
+  .left p {
+    max-width: 520px;
+    margin: 34px auto 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .frequencyList {
+    align-items: center;
+    margin-top: 44px;
+  }
+
+  .frequencyCard {
+    width: 420px;
+  }
+
+  .stats {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  .page::before {
+    left: auto;
+    right: -130px;
+  }
+
+  .page::after {
+    left: auto;
+    right: -130px;
+  }
+
+  .breadcrumb {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding-top: 14px;
+  }
+
+  .breadcrumb p {
+    margin: 0 0 6px;
+    font-size: 8px;
+  }
+
+  .breadcrumb h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .hero {
+    padding: 40px 0 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .imagesBox {
+    order: 1;
+    width: 100%;
+    height: 240px;
+    margin-top: 8px;
+  }
+
+  .left {
+    order: 2;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .visual {
+    order: 3;
+    width: 100%;
+    margin-top: 28px;
+    padding: 48px 20px 70px;
+  }
+
+  .mainGirl {
+    width: 190px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 22px;
+  }
+
+  .smallOne {
+    width: 148px;
+    height: 171px;
+    top: 48px;
+    left: -52px;
+    border-radius: 20px;
+  }
+
+  .smallTwo {
+    width: 148px;
+    height: 171px;
+    top: 48px;
+    right: -52px;
+    bottom: auto;
+    border-radius: 20px;
+  }
+
+  .left p {
+    max-width: 310px;
+    margin: 30px auto;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .mediaBtn {
+    margin-top: 26px;
+    padding: 13px 22px;
+    font-size: 14px;
+    border-radius: 999px;
+  }
+  .frequencyList {
+    align-items: center;
+  }
+
+  .frequencyCard {
+    width: 335px;
+    height: 60px;
+  }
+
+  .frequencyCard h4 {
+    font-size: 11px;
+    margin-bottom: 8px;
+    color: #666;
+  }
+
+  .frequencyCard h4 span {
+    color: #777;
+  }
+
+  .frequencyCard p {
+    font-size: 8px;
+    margin-bottom: 4px;
+    color: #aaa;
+  }
+
+  .frequencyCard strong {
+    font-size: 10px;
+    color: #555;
+  }
+  .logo {
+    width: 110px;
+    margin-bottom: 28px;
+  }
+
+  .stats {
+    margin-top: 0;
+    gap: 22px;
+  }
+
+  .statItem h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .statItem p {
+    font-size: 10px;
+  }
+}

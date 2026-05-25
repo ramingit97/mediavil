@@ -1,0 +1,193 @@
+.section {
+  background: #f7f7f7;
+  padding: 70px 40px 100px;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.head h2 {
+  margin: 0 0 16px;
+
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 800;
+
+  color: #555;
+}
+
+.head p {
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 700;
+
+  color: #aaa;
+}
+
+.cards {
+  max-width: 1220px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.card {
+  width: 560px;
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+  height: 330px;
+
+  display: block;
+
+  object-fit: cover;
+  border-radius: 18px;
+
+  margin-bottom: 24px;
+}
+
+.card h3 {
+  margin: 0 0 14px;
+
+  max-width: 440px;
+
+  font-size: 23px;
+  line-height: 1.2;
+  font-weight: 800;
+
+  color: #555;
+}
+
+.card a {
+  font-size: 16px;
+  color: #e30613;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 65px 28px 90px;
+  }
+
+  .cards {
+    max-width: 1000px;
+    gap: 22px;
+  }
+
+  .card {
+    width: 480px;
+  }
+
+  .card img {
+    height: 290px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+    max-width: 390px;
+  }
+
+  .card a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 60px 24px 80px;
+  }
+
+  .head {
+    margin-bottom: 36px;
+  }
+
+  .head h2 {
+    font-size: 32px;
+  }
+
+  .head p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+  }
+
+  .card img {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    max-width: 560px;
+    margin: 0 auto 14px;
+
+    font-size: 22px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 55px 20px 70px;
+  }
+
+  .head {
+    margin-bottom: 34px;
+  }
+
+  .head h2 {
+    margin-bottom: 12px;
+    font-size: 28px;
+  }
+
+  .head p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .cards {
+    gap: 34px;
+  }
+
+  .card {
+    max-width: 320px;
+  }
+
+  .card img {
+    height: 190px;
+    border-radius: 22px;
+    margin-bottom: 18px;
+  }
+
+  .card h3 {
+    max-width: 280px;
+    margin: 0 auto 12px;
+
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .card a {
+    font-size: 11px;
+    text-underline-offset: 2px;
+  }
+}

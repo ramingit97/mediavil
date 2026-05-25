@@ -1,0 +1,269 @@
+.section {
+  padding: 120px 20px 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.withWave::before {
+  content: "";
+
+  position: absolute;
+
+  top: -40px;
+  left: 0;
+
+  width: 100%;
+  height: 120px;
+
+  background-color: white;
+
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,80 C180,120 260,120 420,40 C560,120 700,170 860,50 C1120,120 1210,140 1440,70 L1440,0 L0,0 Z' fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,80 C180,120 260,120 420,40 C560,120 700,170 860,50 C1120,120 1210,140 1440,70 L1440,0 L0,0 Z' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+.waveTop {
+  position: absolute;
+  top: 0px;
+  left: -55px;
+
+  width: 100%;
+  height: auto;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  position: relative;
+  height: 210px;
+  border-radius: 14px;
+  overflow: hidden;
+  color: white;
+}
+
+.large {
+  height: 320px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 2;
+}
+
+.card:not(.large) .overlay {
+  background: rgba(0, 68, 126, 0.78);
+}
+.content {
+  /* max-width: 513px; */
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  height: 100%;
+  justify-content: center;
+}
+.card.large .content {
+  max-width: 50%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card:not(.large) .content {
+  /* max-width: 260px; */
+}
+
+.badge {
+  display: inline-block;
+
+  background: #e30613;
+  color: white;
+
+  border-radius: 999px;
+
+  padding: 5px 12px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.content h3 {
+  margin: 0 0 26px;
+
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.card:not(.large) h3 {
+  font-size: 21px;
+  margin-bottom: 24px;
+}
+
+.content button {
+  border: none;
+
+  background: white;
+  color: #064c84;
+
+  border-radius: 999px;
+
+  padding: 13px 28px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.card:not(.large) button {
+  padding: 10px 20px;
+  font-size: 12px;
+}
+
+
+
+@media (max-width: 991px) {
+
+
+  .wrapper {
+    max-width: 720px;
+    padding-top: 30px;
+  }
+
+  .wrapper :global(.ant-row) {
+    justify-content: center;
+  }
+
+  .card,
+  .large {
+    height: 280px;
+    border-radius: 20px;
+  }
+
+  .card.large .content {
+    max-width: 55%;
+    right: 10px;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .badge {
+    font-size: 9px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+
+  .content h3 {
+    font-size: 22px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .card:not(.large) h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .content button {
+    padding: 11px 22px;
+    font-size: 12px;
+  }
+
+  .card:not(.large) button {
+    padding: 10px 18px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 768px) {
+
+
+
+  .wrapper {
+    max-width: 330px;
+  }
+
+  .wrapper :global(.ant-row) {
+    justify-content: center;
+  }
+
+  .card,
+  .large {
+    width: 100%;
+    height: 310px;
+    border-radius: 18px;
+  }
+
+  .card img {
+    object-position: center;
+  }
+
+  
+  .card.large .content {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+
+  .content {
+    padding: 0 40px 28px;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .badge {
+    font-size: 10px;
+    line-height: 1.1;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+  }
+
+  .content h3,
+  .card:not(.large) h3 {
+    font-size: 18px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .content button,
+  .card:not(.large) button {
+    width: 100%;
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+}
