@@ -1,6 +1,7 @@
 export const ROUTER = {
   Home: "/",
-  Home2: "home2",
+  Home1: "/home1",
+  Home2: "/home2",
   Home3: "/home3",
   Europe: "/EuropePlus",
   Retro: "/retroFm",

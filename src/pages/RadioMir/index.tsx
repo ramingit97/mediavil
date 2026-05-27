@@ -41,8 +41,11 @@ function RadioMir() {
           navShadow: "#B2D237",
         }}
       />
-      <AdsSection colors={{ pageBg: "#B2D237", btnColor: "#1383C6" }} />
-      <PopularShows />
+      <AdsSection
+        colors={{ pageBg: "#B2D237", btnColor: "#1383C6" }}
+        stationName="Радио Мир"
+      />
+      <PopularShows stationName="Радио Мир" />
       <MediavilSection />
       <PromoSection />
       <Footer />

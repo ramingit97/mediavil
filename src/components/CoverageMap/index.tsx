@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Col, Row } from "antd";
 import style from "./coverageMap.module.css";
-import redVector from "@/assets/images/redVector.svg";
 import vladivostok from "@/assets/images/vlodivostok.svg";
 import ussuriysk from "@/assets/images/ussuriysk.svg";
 import arsenyev from "@/assets/images/arsenyev.svg";
@@ -15,6 +14,8 @@ import road from "@/assets/images/Дорожное.png";
 import retro from "@/assets/images/Ретрo.png";
 import russian from "@/assets/images/Русское.png";
 import europe from "@/assets/images/Европа.svg";
+import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
+import CoverageDashedWaveIcon from "@/assets/icons/CoverageDashedWaveIcon";
 
 function CoverageMapSection() {
   const [activeTab, setActiveTab] = useState<"cities" | "radios">("cities");
@@ -166,8 +167,12 @@ function CoverageMapSection() {
         </div>
       )}
 
-      <img src={redVector} alt="" className={style.waveBottom} />
-      <div className={style.bottomWave}></div>
+      {/* <img src={redVector} alt="" className={style.waveBottom} />
+      <div className={style.bottomWave}></div> */}
+      <div className={style.wave_box}>
+        <WaveSectionIcon className={style.waveSvg} fill="#ffffff" />
+        <CoverageDashedWaveIcon className={style.dashed_svg} />
+      </div>
     </section>
   );
 }

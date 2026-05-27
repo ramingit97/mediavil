@@ -49,8 +49,11 @@ function NovoeRadio() {
           navShadow: "#555553",
         }}
       />
-      <AdsSection colors={{ pageBg: "#555553", btnColor: "#D41220" }} />
-      <PopularShows />
+      <AdsSection
+        colors={{ pageBg: "#555553", btnColor: "#D41220" }}
+        stationName="Новом радио"
+      />
+      <PopularShows stationName="Новом радио" />
       <MediavilSection />
       <PromoSection />
       <Footer />

@@ -1,7 +1,8 @@
 import { Col, Row } from "antd";
 import style from "./adsSection.module.css";
-import WaveBottomIcon from "@/assets/icons/WaveBottomIcon";
 import HeadphoneIcon from "@/assets/icons/HeadphoneIcon";
+import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
+import PlayIcon from "@/assets/icons/play.svg?react";
 import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
 
 type AdsColors = {
@@ -12,7 +13,8 @@ type AdsColors = {
 
 function AdsSection({
   colors = { pageBg: "#ffffff", btnColor: "#000000", consultBtn: "#fff" },
-}: { colors?: AdsColors }) {
+  stationName = "Европа Плюс",
+}: { colors?: AdsColors; stationName?: string }) {
   const cards = [
     {
       title: "Рекламный аудиоролик",
@@ -53,27 +55,21 @@ function AdsSection({
         } as React.CSSProperties
       }
     >
-      <h2>Форматы рекламы на Европа Плюс</h2>
+      <h2>Форматы рекламы на {stationName}</h2>
 
       <div className={style.cards}>
         <Row gutter={[43, 43]} justify="center">
           {cards.map((card, index) => (
-           <Col key={index} xs={24} sm={24} md={24} lg={8}>
+            <Col key={index} xs={24} sm={24} md={24} lg={8}>
               <div className={style.card}>
                 <h3>{card.title}</h3>
-
                 <h4>{card.subtitle}</h4>
-
                 <p className={style.description}>{card.description}</p>
-
                 <div className={style.line}></div>
-
                 <div className={style.bottom}>
-                  <button className={style.play}>▶</button>
-
+                  <PlayIcon className={style.play} />
                   <div>
                     <span>{card.bottomTitle}</span>
-
                     <strong>{card.bottomText}</strong>
                   </div>
                 </div>
@@ -92,12 +88,12 @@ function AdsSection({
         <br />
         способах привлечь новых клиентов
       </p>
-      <WaveBottomIcon className={style.waveSvg} fill="#f7f7f7" />
-      <div className={style.center_svg}>
-        <HeadphoneIcon />
-      </div>
-      <div className={style.gray_svg}>
-        <DashedWaveIcon />
+      <div className={style.wave_box}>
+        <WaveSectionIcon className={style.waveSvg} fill="#f7f7f7" />
+        <div className={style.center_svg}>
+          <HeadphoneIcon />
+        </div>
+        <DashedWaveIcon className={style.dashed_svg} />
       </div>
     </section>
   );

@@ -4,6 +4,8 @@ import style from "./europePlus.module.css";
 
 import Navbar from "@/components/navbar";
 import type { MainDetails } from "@/components/types/type";
+import PlayIcon from "@/assets/icons/play.svg?react";
+import AudioIcon from "@/assets/icons/audio.svg?react";
 
 function EuropePlus({
   title,
@@ -39,7 +41,7 @@ function EuropePlus({
           ["--card-shadow"]: colors.cardShadow,
           ["--logo-color"]: colors.logoColor ?? "white",
           ["--nav-shadow"]: colors.navShadow ?? "rgba(0, 0, 0, 0.35)",
-         
+
           ["--description-color"]: colors.descriptionColor ?? "white",
 
           ["--media-btn-bg"]: colors.mediaBtnBg ?? "white",
@@ -60,17 +62,21 @@ function EuropePlus({
             <b>«{title}»</b> — {description}
           </p>
 
-          <button className={style.mediaBtn}>🔊 Запросить медиакит</button>
+          <button className={style.mediaBtn}>
+            <AudioIcon className={style.audioIcon} />
+            Запросить медиакит
+          </button>
 
           <div className={style.frequencyList}>
             {frequencies.map((item, index) => (
               <div className={style.frequencyCard} key={index}>
-                <button className={style.play}>▶</button>
+                <PlayIcon className={style.play} />
 
                 <div>
                   <h4>
                     {item.city} <span>— {item.fm}</span>
                   </h4>
+                  <hr />
                   <p>сейчас в эфире</p>
                   <strong>Рекламная пауза</strong>
                 </div>
@@ -97,7 +103,7 @@ function EuropePlus({
             </div>
 
             <div className={style.statItem}>
-              <h3>20-36 лет</h3>
+              <h3>25-45 лет</h3>
               <p>
                 средний возраст
                 <br />

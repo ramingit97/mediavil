@@ -43,8 +43,11 @@ function EuropeRadio() {
           navShadow: "#ff4651",
         }}
       />
-      <AdsSection colors={{ pageBg: "#ff4651", btnColor: "#1f5bea" }} />
-      <PopularShows />
+      <AdsSection
+        colors={{ pageBg: "#ff4651", btnColor: "#1f5bea" }}
+        stationName="Европа Плюс"
+      />
+      <PopularShows stationName="Европа Плюс" />
       <MediavilSection />
       <PromoSection />
       <Footer />

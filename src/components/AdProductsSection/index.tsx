@@ -1,7 +1,9 @@
 import Navbar from "@/components/navbar";
 import Title from "@/components/title";
 import style from "./adProductsSection.module.css";
-
+import PlayIcon from "@/assets/icons/play.svg?react";
+import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
+import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
 function AdProductsSection() {
   const cards = [
     {
@@ -58,7 +60,9 @@ function AdProductsSection() {
             <div className={style.line}></div>
 
             <div className={style.bottom}>
-              <button>▶</button>
+              <button>
+                <PlayIcon />
+              </button>
 
               <div>
                 <span>{card.bottomTitle}</span>
@@ -67,6 +71,11 @@ function AdProductsSection() {
             </div>
           </article>
         ))}
+      </div>
+
+      <div className={style.wave_box}>
+        <WaveSectionIcon className={style.waveSvg} fill="#f7f7f7" />
+        <DashedWaveIcon className={style.dashed_svg} />
       </div>
     </section>
   );

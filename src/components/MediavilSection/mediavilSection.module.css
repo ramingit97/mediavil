@@ -162,11 +162,15 @@
   .wrapper h2 {
     font-size: 24px;
     line-height: 1.15;
+    position: relative;
+    z-index: 3;
   }
 
   .subtitle {
     margin-bottom: 36px;
     font-size: 12px;
+    position: relative;
+    z-index: 3;
     line-height: 1.6;
   }
 
@@ -175,6 +179,7 @@
     height: 245px;
     top: -50px;
     right: 0;
+    z-index: 1;
   }
 
   .card {

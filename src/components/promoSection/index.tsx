@@ -1,6 +1,5 @@
 import { Col, Row } from "antd";
 import style from "./promoSection.module.css";
-import vector from "@/assets/images/dashedVector.svg";
 import img1 from "@/assets/images/Rectangle252.png";
 import img2 from "@/assets/images/Rectangle268.png";
 import img3 from "@/assets/images/Rectangle269.png";
@@ -37,7 +36,6 @@ function PromoSection({ showWave = false }) {
 
   return (
     <section className={`${style.section} ${showWave ? style.withWave : ""}`}>
-      {showWave && <img src={vector} alt="" className={style.waveTop} />}
 
       <div className={style.wrapper}>
         <Row gutter={[20, 20]}>

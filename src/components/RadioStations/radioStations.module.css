@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.section::before {
+/* .section::before {
   content: "";
 
   position: absolute;
@@ -27,7 +27,7 @@
   mask-repeat: no-repeat;
 
   z-index: 0;
-}
+} */
 .waveTop {
   position: absolute;
 

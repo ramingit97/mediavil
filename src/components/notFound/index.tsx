@@ -19,13 +19,13 @@ function NotFound() {
 
       <div className={style.rings}></div>
 
-      <img src={StudioIcon} className={`${style.logo} ${style.studio}`} />
-      <img src={EuropeIcon} className={`${style.logo} ${style.europa}`} />
-      <img src={NovoeIcon} className={`${style.logo} ${style.novoe}`} />
-      <img src={RetroIcon} className={`${style.logo} ${style.retro}`} />
-      <img src={RussiaIcon} className={`${style.logo} ${style.russia}`} />
-      <img src={RoadIcon} className={`${style.logo} ${style.road}`} />
-      <img src={MirIcon} className={`${style.logo} ${style.mir}`} />
+      <img src={StudioIcon} alt="" className={`${style.logo} ${style.studio}`} />
+      <img src={EuropeIcon} alt="" className={`${style.logo} ${style.europa}`} />
+      <img src={NovoeIcon} alt="" className={`${style.logo} ${style.novoe}`} />
+      <img src={RetroIcon} alt="" className={`${style.logo} ${style.retro}`} />
+      <img src={RussiaIcon} alt="" className={`${style.logo} ${style.russia}`} />
+      <img src={RoadIcon} alt="" className={`${style.logo} ${style.road}`} />
+      <img src={MirIcon} alt="" className={`${style.logo} ${style.mir}`} />
 
       <div className={style.center}>
         <h1>

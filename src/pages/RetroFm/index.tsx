@@ -40,8 +40,11 @@ function RetroFm() {
           navShadow: "#8500AC",
         }}
       />
-      <AdsSection colors={{ pageBg: "#8500AC", btnColor: "8500AC" }} />
-      <PopularShows />
+      <AdsSection
+        colors={{ pageBg: "#8500AC", btnColor: "#8500AC" }}
+        stationName="Ретро FM"
+      />
+      <PopularShows stationName="Ретро FM" />
       <MediavilSection />
       <PromoSection />
       <Footer />

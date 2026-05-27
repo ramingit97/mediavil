@@ -21,7 +21,7 @@ function CasesSection() {
   return (
     <section className={style.section}>
       <div className={style.head}>
-        <h2>Наши кейсы</h2>
+        <h2>Наши проекты</h2>
         <p>
           Реальные истории успеха, цифры и охваты.
           <br />

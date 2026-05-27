@@ -1,6 +1,5 @@
 import { Col, Row } from "antd";
 import style from "./workProcessSection.module.css";
-import vector from "@/assets/images/dashedVector.svg";
 
 import work1 from "@/assets/images/girl.png";
 import work2 from "@/assets/images/worker4.png";
@@ -45,7 +44,7 @@ function WorkProcessSection() {
 
   return (
     <section className={style.section}>
-      <img src={vector} alt="" className={style.waveTop} />
+      {/* <img src={vector} alt="" className={style.waveTop} /> */}
       <div className={style.head}>
         <h2>Как мы работаем</h2>
         <p>

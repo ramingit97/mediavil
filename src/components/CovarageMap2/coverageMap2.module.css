@@ -146,7 +146,7 @@
   pointer-events: none;
 }
 
-.bottomWave::before {
+/* .bottomWave::before {
   content: "";
   position: absolute;
   left: 0;
@@ -160,6 +160,29 @@
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1902 180' preserveAspectRatio='none'%3E%3Cpath d='M1902 57.4987C1742.75 55.6198 1399.71 51.4017 1327 70.7268C1236.11 94.8832 1190.48 160.773 1157.5 138.227C1124.52 115.681 985.863 6.35571 843.5 48.2268C701.137 90.0979 627.322 181.507 530 122.727C432.678 63.9462 281.313 -53.2102 -1 29.7268L-1 144L1902 180Z' fill='black'/%3E%3C/svg%3E");
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
+} */
+
+.wave_box {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 164px;
+}
+
+.waveSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dashed_svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .waveBottom {

@@ -42,8 +42,11 @@ function RusskoeRadio() {
           navShadow: "#F10316",
         }}
       />
-      <AdsSection colors={{ pageBg: "#F10316", btnColor: "#3333C9" }} />
-      <PopularShows />
+      <AdsSection
+        colors={{ pageBg: "#F10316", btnColor: "#3333C9" }}
+        stationName="Русском радио"
+      />
+      <PopularShows stationName="Русском радио" />
       <MediavilSection />
       <PromoSection />
       <Footer />

@@ -48,7 +48,12 @@
 }
 
 .highlight {
-  color: #e30613;
+  color: #06356b;
+  text-decoration: underline;
+}
+
+.dark .card:hover .highlight {
+  color: white;
 }
 
 .dark .wrapper {

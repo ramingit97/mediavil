@@ -6,7 +6,7 @@ import show2 from "@/assets/images/Rectangle104.png";
 import show3 from "@/assets/images/Rectangle106.png";
 import show4 from "@/assets/images/Rectangle108.png";
 
-function PopularShows() {
+function PopularShows({ stationName = "Новом радио" }: { stationName?: string }) {
   const shows = [
     {
       image: show1,
@@ -36,7 +36,7 @@ function PopularShows() {
 
   return (
     <section className={style.section}>
-      <h2>Популярные шоу на Новом радио</h2>
+      <h2>Популярные шоу на {stationName}</h2>
       <div className={style.wrapper}>
         <Row gutter={[31, 31]} justify="center">
           {shows.map((show, index) => (

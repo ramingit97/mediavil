@@ -1,7 +1,6 @@
 import { Col, Row } from "antd";
 import style from "./radioStations.module.css";
 
-import vector from "@/assets/images/dashedVector.svg";
 import europaCard from "@/assets/images/ЕвропаCard.png";
 import novoeCard from "@/assets/images/новоеCard.png";
 import russianCard from "@/assets/images/РусскоеCard.png";
@@ -32,7 +31,7 @@ function RadioStationsSection() {
     {
       image: europaCard,
       logo: EuropeIcon,
-      logoColor: "white",
+      logoColor: "black",
       title: "Europa Plus",
       description:
         "Топ 40, EDM, Pop. Только актуальные мировые и российские хиты",
@@ -112,7 +111,7 @@ function RadioStationsSection() {
 
   return (
     <section className={style.section}>
-      <img src={vector} alt="" className={style.waveTop} />
+      {/* <img src={vector} alt="" className={style.waveTop} /> */}
       <h2>Наши радиостанции</h2>
 
       <div className={style.tabs}>

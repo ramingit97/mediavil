@@ -1,6 +1,34 @@
 .section {
   background: #fff;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 280px;
+}
+
+.wave_box {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.waveSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dashed_svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .head {
@@ -11,13 +39,12 @@
 .head h2 {
   margin: 0 0 18px;
   font-size: 34px;
-  line-height: 1.15;
   font-weight: 800;
   color: #555;
 }
 
 .head p {
-  margin: 0;
+  /* margin: 0; */
   font-size: 15px;
   line-height: 1.5;
   font-weight: 700;
@@ -25,24 +52,24 @@
 }
 
 .cards {
-  margin: 0 auto;
+  margin: 0 20px;
   display: flex;
   justify-content: center;
-  gap: 28px;
+    gap: 38px;
 }
 
 .card {
-
   background: #fdfdfd;
   border: 3px solid #e9e9e9;
-  border-radius: 18px;
-  padding: 42px 36px 34px;
+  border-radius: 25px;
+  padding: 49px;
+  width: 480px;
   text-align: center;
   color: #444;
 }
 
 .card h3 {
-  margin: 0 0 10px;
+  /* margin: 0 0 10px; */
   font-size: 20px;
   font-weight: 800;
 }
@@ -54,7 +81,7 @@
 }
 
 .description {
-  margin: 0;
+  /* margin: 0; */
   font-size: 15px;
   line-height: 1.55;
 }
@@ -76,11 +103,7 @@
   width: 44px;
   height: 44px;
   border: none;
-  border-radius: 50%;
-  background: #e30613;
-  color: white;
-  font-size: 17px;
-  flex-shrink: 0;
+  color: #d41220;
 }
 
 .bottom span {

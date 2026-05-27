@@ -6,7 +6,7 @@
   background-color: #f9f9f9;
 }
 
-.withWave::before {
+/* .withWave::before {
   content: "";
 
   position: absolute;
@@ -27,7 +27,7 @@
   mask-repeat: no-repeat;
 
   z-index: 0;
-}
+} */
 
 .waveTop {
   position: absolute;
@@ -42,7 +42,7 @@
 }
 
 .wrapper {
-  max-width: 1120px;
+  max-width: 1180px;
   margin: 0 auto;
   padding-top: 70px;
   position: relative;
@@ -51,14 +51,14 @@
 
 .card {
   position: relative;
-  height: 210px;
+  height: 307px;
   border-radius: 14px;
   overflow: hidden;
   color: white;
 }
 
 .large {
-  height: 320px;
+  height: 557px;
 }
 
 .card img {
@@ -219,11 +219,13 @@
     justify-content: center;
   }
 
-  .card,
-  .large {
-    width: 100%;
+  .card {
+    /* width: 100%; */
     height: 310px;
     border-radius: 18px;
+  }
+  .large{
+    height: 463px;
   }
 
   .card img {
@@ -233,7 +235,7 @@
   
   .card.large .content {
     max-width: 100%;
-    width: 100%;
+    /* width: 100%; */
     position: relative;
     right: auto;
     top: auto;
@@ -247,23 +249,24 @@
   }
 
   .badge {
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.1;
-    padding: 6px 12px;
+    padding: 5px 15px;
     margin-bottom: 10px;
   }
 
   .content h3,
   .card:not(.large) h3 {
-    font-size: 18px;
-    line-height: 1.15;
+    font-size: 24px;
     margin-bottom: 18px;
   }
 
   .content button,
   .card:not(.large) button {
     width: 100%;
-    padding: 11px 18px;
-    font-size: 12px;
+    padding: 10px 20px;
+    font-size: 18px;
   }
+
+  
 }

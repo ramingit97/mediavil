@@ -6,6 +6,9 @@ import RussiaIcon from "@/assets/images/Русское.png";
 import NovoeIcon from "@/assets/images/Новое.png";
 import RoadIcon from "@/assets/images/Дорожное.png";
 import Navbar from "@/components/navbar";
+import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
+import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
+import HeadphoneIcon from "@/assets/icons/HeadphoneIcon";
 
 function HeroSection() {
   return (
@@ -54,7 +57,13 @@ function HeroSection() {
         </a>
       </div>
 
-    
+      <div className={style.wave_box}>
+        <WaveSectionIcon className={style.waveSvg} fill="#f9f9f9" />
+        <div className={style.center_svg}>
+          <HeadphoneIcon />
+        </div>
+        <DashedWaveIcon className={style.dashed_svg} />
+      </div>
     </section>
   );
 }

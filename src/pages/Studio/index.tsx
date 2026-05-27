@@ -44,8 +44,11 @@ function Studio() {
           mediaBtnText: "#fffff",
         }}
       />
-      <AdsSection colors={{ pageBg: "#000", btnColor: "#FFFFFF", consultBtn:"#000" }} />
-      <PopularShows />
+      <AdsSection
+        colors={{ pageBg: "#000", btnColor: "#FFFFFF", consultBtn: "#000" }}
+        stationName="Studio 21"
+      />
+      <PopularShows stationName="Studio 21" />
       <MediavilSection />
       <PromoSection />
       <Footer />

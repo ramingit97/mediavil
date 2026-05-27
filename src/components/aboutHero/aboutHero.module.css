@@ -65,8 +65,7 @@ h1 {
   gap: 80px;
 }
 
-.left {
-}
+
 
 .block {
   margin-bottom: 42px;
@@ -75,7 +74,7 @@ h1 {
 .block h3 {
   margin: 0 0 18px;
 
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1.2;
   font-weight: 800;
 
@@ -86,13 +85,14 @@ h1 {
 .block li {
   color: #666;
 
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1.7;
 }
 
 .block ul {
   margin: 18px 0 0;
   padding-left: 22px;
+list-style: disc;
 }
 
 .block li {
@@ -109,7 +109,7 @@ h1 {
 
   text-align: center;
 
-  font-size: 34px;
+  font-size: 28px;
   line-height: 1.4;
   font-weight: 800;
 
@@ -123,16 +123,16 @@ h1 {
 }
 
 .card {
-  padding: 26px 28px;
+  padding: 30px 40px;
 
   background: #0f4d82;
-  border-radius: 18px;
+  border-radius: 25px;
 
   text-align: center;
 
   color: white;
 
-  font-size: 17px;
+  font-size: 21px;
   line-height: 1.6;
   font-weight: 700;
 
@@ -183,7 +183,7 @@ h1 {
   }
 
   .left {
-    text-align: center;
+    text-align: left;
   }
 
   .page::before {
@@ -196,7 +196,7 @@ h1 {
 
   h1 {
     max-width: 620px;
-    
+
     font-size: 34px;
     line-height: 1.15;
   }
@@ -261,7 +261,9 @@ h1 {
     font-size: 26px;
     line-height: 1.15;
   }
-
+.left {
+   text-align: left;
+  }
   .content {
     gap: 24px;
   }
@@ -271,13 +273,13 @@ h1 {
   }
 
   .block h3 {
-    font-size: 17px;
+    font-size: 21px;
     margin-bottom: 12px;
   }
 
   .block p,
   .block li {
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.55;
   }
 
@@ -287,10 +289,9 @@ h1 {
   }
 
   .right h2 {
-    max-width: 310px;
     margin: 18px auto 28px;
-    font-size: 18px;
-    line-height: 1.35;
+    font-size: 21px;
+    line-height: 24px;
   }
 
   .cards {
@@ -299,9 +300,9 @@ h1 {
   }
 
   .card {
-    padding: 18px 16px;
-    border-radius: 14px;
-    font-size: 11px;
-    line-height: 1.45;
+    padding: 30px 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    
   }
 }

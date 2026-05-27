@@ -54,8 +54,11 @@ function RoadRadio() {
           navShadow:"#C93E31"
         }}
       />
-      <AdsSection colors={{ pageBg: "#C93E31", btnColor: "#F1C74B" }} />
-      <PopularShows />
+      <AdsSection
+        colors={{ pageBg: "#C93E31", btnColor: "#F1C74B" }}
+        stationName="Дорожном радио"
+      />
+      <PopularShows stationName="Дорожном радио" />
       <MediavilSection />
       <PromoSection />
       <Footer />

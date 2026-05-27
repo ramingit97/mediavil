@@ -1,8 +1,9 @@
 import { useState } from "react";
 import style from "./coverageMap2.module.css";
+import CoverageDashedWaveIcon from "@/assets/icons/CoverageDashedWaveIcon";
+import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 
 import mapImg from "@/assets/images/map.png";
-import redVector from "@/assets/images/redVector.svg";
 
 import vladivostok from "@/assets/images/vlodivostok.svg";
 import ussuriysk from "@/assets/images/ussuriysk.svg";
@@ -161,8 +162,10 @@ function CoverageMapSection() {
           </div>
         </div>
       </div>
-      <img src={redVector} alt="" className={style.waveBottom} />
-      <div className={style.bottomWave}></div>
+      <div className={style.wave_box}>
+        <WaveSectionIcon className={style.waveSvg} fill="#ffffff" />
+        <CoverageDashedWaveIcon className={style.dashed_svg} />
+      </div>
     </section>
   );
 }
