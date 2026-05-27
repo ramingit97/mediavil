@@ -141,7 +141,14 @@ function CoverageMapSection() {
             {data.map((item, index) => (
               <div className={style.card} key={index}>
                 {item.icon ? (
-                  <img src={item.icon} alt="" className={style.icon} />
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className={style.icon}
+                    style={
+                      item.icon === EuropeIcon ? { filter: "brightness(0)" } : undefined
+                    }
+                  />
                 ) : (
                   <div className={style.iconPlaceholder}></div>
                 )}

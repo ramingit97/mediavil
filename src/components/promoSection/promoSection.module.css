@@ -1,5 +1,5 @@
 .section {
-  padding: 120px 20px 90px;
+  padding: 120px 0 90px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -42,7 +42,7 @@
 }
 
 .wrapper {
-  max-width: 1180px;
+  width: min(90%, 1280px);
   margin: 0 auto;
   padding-top: 70px;
   position: relative;

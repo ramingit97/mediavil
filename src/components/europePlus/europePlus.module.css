@@ -133,7 +133,7 @@ hr {
 .logo {
   position: static;
   width: 175px;
-  color: white !important;
+  color: var(--logo-color, white) !important;
   margin-bottom: 40px;
 }
 

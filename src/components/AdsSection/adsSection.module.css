@@ -17,8 +17,9 @@
 }
 
 .cards {
+  width: min(90%, 1280px);
   margin: 0 auto 90px;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .card {

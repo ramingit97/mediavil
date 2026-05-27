@@ -1,12 +1,12 @@
 .section {
-  padding: 90px 40px;
+  padding: 90px 0;
   background: #f7f7f7;
   margin: 0 auto;
 }
 
 .wrapper {
   position: relative;
-  max-width: 1280px;
+  width: min(90%, 1280px);
   margin: 0 auto;
   padding: 65px 60px 60px;
 

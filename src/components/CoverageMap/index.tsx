@@ -155,6 +155,9 @@ function CoverageMapSection() {
                     src={radio.logo}
                     alt={radio.name}
                     className={style.logo}
+                    style={
+                      radio.logo === europe ? { filter: "brightness(0)" } : undefined
+                    }
                   />
                   <h3>{radio.name}</h3>
                   {radio.stations.map((station, i) => (

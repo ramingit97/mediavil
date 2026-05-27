@@ -41,6 +41,7 @@ function EuropeRadio() {
           playBg: "#ff4651",
           cardShadow: "#7398f2",
           navShadow: "#ff4651",
+          logoColor: "black",
         }}
       />
       <AdsSection
