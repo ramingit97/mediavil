@@ -6,13 +6,15 @@ import PromoSection from "@/components/promoSection";
 import Footer from "@/components/footer";
 import MediavilSection from "@/components/MediavilSection";
 import AdsSection from "@/components/AdsSection";
-import PopularShows from "@/components/popularShows";
 function NovoeRadio() {
   return (
     <>
       <NovoeHero
         title="Новое радио"
-        description=" яркое мультимедийное пространство, где звучат только суперхиты и самые горячие суперновинки. Это выбор молодой и активной аудитории, которая следит за хайпом и хочет получать доступ к лучшим музыкальным премьерам в режиме реального времени"
+        description={[
+          "яркое мультимедийное пространство, где звучат только суперхиты и самые горячие суперновинки.",
+          "Это выбор молодой и активной аудитории, которая следит за хайпом и хочет получать доступ к лучшим музыкальным премьерам в режиме реального времени.",
+        ]}
         frequencies={[
           {
             city: "Владивосток ",
@@ -72,13 +74,14 @@ function NovoeRadio() {
           buttonText: "#D41220",
           playBg: "#555553",
           navShadow: "#555553",
+          mediaBtnBg: "#ffffff",
+          mediaBtnText: "#D41220",
         }}
       />
       <AdsSection
         colors={{ pageBg: "#555553", btnColor: "#D41220" }}
         stationName="Новом радио"
       />
-      <PopularShows stationName="Новом радио" />
       <MediavilSection />
       <PromoSection />
       <Footer />

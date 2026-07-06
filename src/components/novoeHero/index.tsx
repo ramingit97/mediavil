@@ -14,7 +14,7 @@ export interface InfoCard {
 
 interface NovoeHeroProps {
   title: string;
-  description: string;
+  description: string[];
   logo: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   frequencies: FrequencyItem[];
   infoCards: InfoCard[];
@@ -104,9 +104,19 @@ function NovoeHero({
         <div className={style.right}>
           <Logo className={style.logo} />
 
-          <p className={style.description}>
-            <b>«{title}»</b> — {description}
-          </p>
+          <div className={style.description}>
+            {description.map((paragraph, index) => (
+              <p key={index}>
+                {index === 0 ? (
+                  <>
+                    <b>«{title}»</b> — {paragraph}
+                  </>
+                ) : (
+                  paragraph
+                )}
+              </p>
+            ))}
+          </div>
 
           <div className={style.frequencyList}>
             {frequencies.map((item, index) => (

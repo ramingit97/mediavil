@@ -169,10 +169,18 @@
 }
 
 .description {
+  margin-bottom: 40px;
+}
+
+.description p {
   font-size: 15px;
   line-height: 1.6;
   color: var(--description-color);
-  margin-bottom: 40px;
+  margin: 0 0 20px;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
 }
 
 .frequencyList {
