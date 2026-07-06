@@ -1,28 +1,18 @@
 import NovoeLogo from "@/assets/images/novoe.svg?react";
 
-import EuropePlus from "@/components/europePlus";
+import NovoeHero from "@/components/novoeHero";
 
 import PromoSection from "@/components/promoSection";
 import Footer from "@/components/footer";
 import MediavilSection from "@/components/MediavilSection";
 import AdsSection from "@/components/AdsSection";
-import littleImg1 from "@/assets/images/little3.png";
-import littleImg2 from "@/assets/images/main3.png";
-import littleImg3 from "@/assets/images/little4.png";
 import PopularShows from "@/components/popularShows";
 function NovoeRadio() {
   return (
     <>
-      <EuropePlus
+      <NovoeHero
         title="Новое радио"
-        img1={littleImg1}
-        img2={littleImg2}
-        img3={littleImg3}
-        description=" яркое мультимедийное пространство, 
-где звучат только суперхиты и самые горячие суперновинки. 
-
-Это выбор молодой и активной аудитории, которая следит за хайпом 
-и хочет получать доступ к лучшим музыкальным премьерам в режиме реального времени"
+        description=" яркое мультимедийное пространство, где звучат только суперхиты и самые горячие суперновинки. Это выбор молодой и активной аудитории, которая следит за хайпом и хочет получать доступ к лучшим музыкальным премьерам в режиме реального времени"
         frequencies={[
           {
             city: "Владивосток ",
@@ -37,6 +27,42 @@ function NovoeRadio() {
             fm: "106,8 FM",
           },
         ]}
+        infoCards={[
+          {
+            label: "Аудитория",
+            lines: ["45% мужчины   55% женщины", "25 — 45 лет"],
+          },
+          {
+            label: "Охват",
+            lines: ["~ 70 000 слушателей ежедневно", "только во Владивостоке"],
+          },
+          {
+            label: "Портрет аудитории",
+            lines: ["Доход средний +, амбициозная,", "высоко ценящая сервис"],
+          },
+          {
+            label: "Зоны покрытия",
+            lines: [
+              "Владивосток, Надеждинский",
+              "район, Находкинский ГО,",
+              "Хабаровск, Южно-Сахалинск",
+            ],
+          },
+          {
+            label: "% охвата / AQH / TSL",
+            lines: [
+              "9.8% — еженедельный охват",
+              "110 615 — AQH",
+              "1:03 ч — TSL ежедневно",
+            ],
+          },
+        ]}
+        highlights={[
+          "Победитель национальной\nпремии «Марка №1\nв России 2024»",
+          "В эфире —\nтолько суперхиты\nи суперновинки",
+          "Второе место\nпо темпу роста\nаудитории в России",
+          "ТОП 1\nв утреннем прайме\n(пн-пт 7-11) среди 25-40",
+        ]}
         logo={NovoeLogo}
         colors={{
           pageBg: "#555553",
@@ -45,7 +71,6 @@ function NovoeRadio() {
           ringOutline: "#D41220",
           buttonText: "#D41220",
           playBg: "#555553",
-          cardShadow: "#e76f74",
           navShadow: "#555553",
         }}
       />

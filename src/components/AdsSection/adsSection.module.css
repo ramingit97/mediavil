@@ -78,7 +78,7 @@ height: 100%;
 .play {
   width: 54px;
   height: 54px;
-  color: var(--page-bg);
+  color: var(--button-color);
 
   cursor: pointer;
 }

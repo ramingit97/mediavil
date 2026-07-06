@@ -1,0 +1,399 @@
+.page {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  width: 980px;
+  height: 980px;
+  border-radius: 50%;
+  background: var(--circle-bg);
+  left: -170px;
+  top: -210px;
+  z-index: 0;
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  width: 1180px;
+  height: 1180px;
+  border-radius: 50%;
+  border: 42px solid var(--ring-border);
+  outline: 22px solid var(--ring-outline);
+  left: -340px;
+  top: -320px;
+  z-index: 1;
+}
+
+.navOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to bottom, var(--nav-shadow), transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.breadcrumb {
+  position: absolute;
+  z-index: 5;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+}
+
+.breadcrumb h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: white !important;
+  padding-bottom: 15px;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  padding: 150px 30px 90px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ---------- Left: info cards grid ---------- */
+
+.left {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.infoCard {
+  background: white;
+  color: #1f1f1f;
+  border-radius: 16px;
+  padding: 22px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.infoLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: #9a9a9a;
+}
+
+.infoCard hr {
+  margin: 12px 0;
+  border: none;
+  height: 1px;
+  background: #e4e4e4;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.infoContent p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1f1f1f;
+}
+
+.btnCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mediaBtn {
+  border: none;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--media-btn-bg);
+  color: var(--media-btn-text);
+  padding: 17px 35px;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.audioIcon {
+  width: 21px;
+  height: 18px;
+}
+
+/* ---------- Right: logo + description + frequencies ---------- */
+
+.right {
+  width: 470px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 175px;
+  color: var(--logo-color, white) !important;
+  align-self: center;
+  margin-bottom: 28px;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--description-color);
+  margin-bottom: 40px;
+}
+
+.frequencyList {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.frequencyRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+}
+
+.play {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  color: var(--play-bg);
+}
+
+.play rect {
+  fill: #fff;
+}
+
+.play path {
+  fill: var(--play-bg);
+}
+
+.freqInfo {
+  flex: 1;
+}
+
+.freqInfo h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.freqInfo h4 span {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.freqInfo hr {
+  margin: 8px 0;
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.freqInfo p {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.freqInfo strong {
+  font-size: 14px;
+  color: white;
+}
+
+/* ---------- Highlights band ---------- */
+
+.highlights {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 30px 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.highlight {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: white;
+  white-space: pre-line;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1200px) {
+  .hero {
+    max-width: 1040px;
+    padding: 140px 24px 70px;
+    gap: 36px;
+  }
+
+  .right {
+    width: 400px;
+  }
+
+  .logo {
+    width: 145px;
+  }
+}
+
+@media (max-width: 991px) {
+  .page::before {
+    width: 1200px;
+    height: 1200px;
+    left: -220px;
+    top: -260px;
+  }
+
+  .page::after {
+    width: 1450px;
+    height: 1450px;
+    border: 56px solid var(--ring-border);
+    outline: 30px solid var(--ring-outline);
+    left: -430px;
+    top: -430px;
+  }
+
+  .breadcrumb {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding-top: 24px;
+  }
+
+  .breadcrumb h1 {
+    font-size: 34px;
+  }
+
+  .hero {
+    max-width: 640px;
+    padding: 40px 24px 60px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+
+  .right {
+    order: 1;
+    width: 100%;
+  }
+
+  .logo {
+    align-self: center;
+    order: 3;
+    margin: 32px 0 0;
+  }
+
+  .description {
+    order: 1;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .frequencyList {
+    order: 2;
+  }
+
+  .left {
+    order: 2;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 24px;
+    padding: 10px 24px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  .page::before {
+    left: auto;
+    right: -130px;
+  }
+
+  .page::after {
+    outline: 20px solid var(--ring-outline);
+    border: 30px solid var(--ring-border);
+    left: auto;
+    right: -130px;
+  }
+
+  .breadcrumb p {
+    margin: 0 0 6px;
+    font-size: 8px;
+  }
+
+  .breadcrumb h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .hero {
+    padding: 30px 16px 50px;
+    gap: 30px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .mediaBtn {
+    padding: 14px 26px;
+    font-size: 15px;
+  }
+
+  .freqInfo h4 {
+    font-size: 16px;
+  }
+}
