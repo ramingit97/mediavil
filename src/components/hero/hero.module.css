@@ -4,7 +4,7 @@
   background: #f7f7f7;
   position: relative;
   overflow: hidden;
-  padding-bottom: 250px;
+  padding-bottom: 430px;
 }
 
 .hero::before {
@@ -36,25 +36,25 @@
   z-index: 5;
   text-align: center;
 
-  margin-top: 60px;
+  margin-top: 90px;
 }
 
 .badge {
   background: white;
-  font-size: 28px;
+  font-size: 24px;
   border-radius: 12px;
-  padding: 15px 30px;
-  color: #555;
+  padding: 12px 26px;
+  color: #5a5a5a;
   font-weight: bold;
   display: inline-block;
   margin-bottom: 18px;
 }
 
 .content h1 {
-  font-size: 75px;
-  line-height: 0.95;
+  font-size: 62px;
+  line-height: 0.98;
   color: #3f3f3f;
-  margin: 0 auto;
+  margin: 18px auto 0;
   font-weight: 900;
 }
 
@@ -100,41 +100,143 @@
   font-size: 14px;
 }
 
+/* Lightning bolts radiating from the hero center out to each station logo.
+   `.signals` is a zero-size anchor at the heading center; each `.bolt` pivots
+   from that point (transform-origin: left center) and is rotated + sized to
+   reach its logo. Tuned for the wide desktop layout (hidden below 1200px). */
+/* Two anchor points at the left/right edges of the heading — bolts fan out from
+   there to the logos so they read as emanating from the heading (and never
+   cross the heading text). */
+.signals,
+.signalsRight {
+  position: absolute;
+  top: 542px;
+  width: 0;
+  height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.signals {
+  left: calc(50% - 320px);
+}
+
+.signalsRight {
+  left: calc(50% + 320px);
+}
+
+.bolt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: auto;
+  max-width: none;
+  opacity: 0.4;
+  transform-origin: 0 0;
+}
+
+.boltStudio {
+  width: 244px;
+  transform: rotate(-165.6deg);
+}
+
+.boltEuropa {
+  width: 231px;
+  transform: rotate(127.4deg);
+}
+
+.boltNovoe {
+  width: 326px;
+  transform: rotate(85deg);
+}
+
+.boltRetro {
+  width: 235px;
+  transform: rotate(-95.8deg);
+}
+
+.boltRusskoe {
+  width: 204px;
+  transform: rotate(-23.9deg);
+}
+
+.boltRoad {
+  width: 322px;
+  transform: rotate(18deg);
+}
+
 .logo {
   position: absolute;
   z-index: 4;
   max-width: 120px;
 }
 
+/* White rounded "card" behind each station logo (the Mir badge stays bare).
+   box-sizing: content-box keeps the logo at its max-width and adds the padding
+   around it, so cards size naturally to each logo. */
+.studio,
+.europa,
+.novoe,
+.retro,
+.russian,
+.road {
+  box-sizing: content-box;
+  background: #fff;
+  padding: 16px 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* Mir sits in the content flow directly above the badge and overlaps its top
+   edge (in front of it), as in the Figma. The negative margin creates the
+   overlap; content's margin-top is reduced to keep the heading in place. */
+.mir {
+  display: block;
+  width: 82px;
+  max-width: 82px;
+  margin: 0 auto 65px;
+  position: relative;
+  z-index: 6;
+}
+
+/* Side logos are anchored to the horizontal CENTER (not the screen edges) so
+   they stay a fixed distance from the center — matching the center-anchored
+   bolts, which then reach them at any viewport width. Offsets come from the
+   measured logo centers at the 1728px design width. */
 .studio {
-  top: 150px;
-  left: 120px;
+  top: 240px;
+  left: calc(50% - 470px);
+  transform: translateX(-50%);
 }
 
 .europa {
-  top: 250px;
-  left: 210px;
-  filter: brightness(0);
+  top: 505px;
+  left: calc(50% - 565px);
+  transform: translateX(-50%);
 }
 
 .retro {
-  top: 150px;
-  right: 130px;
+  top: 225px;
+  left: calc(50% + 445px);
+  transform: translateX(-50%);
 }
 
 .russian {
-  top: 290px;
-  right: 200px;
+  top: 505px;
+  left: calc(50% + 548px);
+  transform: translateX(-50%);
 }
 
 .novoe {
-  bottom: 30%;
-  left: 220px;
+  top: 780px;
+  left: calc(50% - 483px);
+  transform: translateX(-50%);
 }
 
 .road {
-  bottom: 30%;
-  right: 250px;
+  top: 755px;
+  left: calc(50% + 473px);
+  transform: translateX(-50%);
 }
 
 .wave_box {
@@ -183,39 +285,64 @@
   border-radius: 50% 50% 0 0;
   z-index: 3;
 }
-@media (max-width: 1200px) {
+/* Below the wide desktop the bolts can't line up, so hide them and switch the
+   logos back to edge-anchored positions (reset the center-anchoring transform). */
+@media (max-width: 1450px) {
+  .signals,
+  .signalsRight {
+    display: none;
+  }
+
   .studio {
+    top: 200px;
     left: 40px;
+    transform: none;
   }
 
   .europa {
-    left: 70px;
-  }
-
-  .retro {
-    right: 60px;
-  }
-
-  .russian {
-    right: 90px;
+    top: 360px;
+    left: 20px;
+    transform: none;
   }
 
   .novoe {
-    left: 90px;
+    top: auto;
+    bottom: 200px;
+    left: 40px;
+    transform: none;
+  }
+
+  .retro {
+    top: 200px;
+    left: auto;
+    right: 40px;
+    transform: none;
+  }
+
+  .russian {
+    top: 360px;
+    left: auto;
+    right: 20px;
+    transform: none;
   }
 
   .road {
-    right: 120px;
+    top: auto;
+    bottom: 150px;
+    left: auto;
+    right: 60px;
+    transform: none;
   }
 }
 
 @media (max-width: 991px) {
   .hero {
     min-height: 980px;
+    padding-bottom: 220px;
   }
 
   .content {
-    margin-top: 80px;
+    margin-top: 38px;
     padding: 0 24px;
   }
 
@@ -236,6 +363,12 @@
 
   .logo {
     max-width: 90px;
+  }
+
+  .mir {
+    width: 60px;
+    max-width: 60px;
+    margin-bottom: -18px;
   }
 
   .studio {
@@ -271,11 +404,12 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 920px;
+    min-height: 760px;
+    padding-bottom: 130px;
   }
 
   .content {
-    margin-top: 60px;
+    margin-top: 24px;
     padding: 0 16px;
   }
 
@@ -328,6 +462,12 @@
     max-width: 72px;
   }
 
+  .mir {
+    width: 52px;
+    max-width: 52px;
+    margin-bottom: -16px;
+  }
+
   .studio {
     top: 180px;
     left: 20px;
@@ -368,5 +508,19 @@
     right: 40px;
     width: 58px;
     height: 46px;
+  }
+}
+
+/* On narrow screens there's no room for the logo cards beside the heading —
+   hide the scattered station logos (they still appear in the stations section
+   below); keep the centered Mir badge. */
+@media (max-width: 768px) {
+  .studio,
+  .europa,
+  .novoe,
+  .retro,
+  .russian,
+  .road {
+    display: none;
   }
 }

@@ -5,6 +5,8 @@ import EuropeIcon from "@/assets/images/europe.svg";
 import RussiaIcon from "@/assets/images/Русское.png";
 import NovoeIcon from "@/assets/images/Новое.png";
 import RoadIcon from "@/assets/images/Дорожное.png";
+import MirIcon from "@/assets/icons/mir.svg";
+import lightning from "@/assets/images/lightning.png";
 import Navbar from "@/components/navbar";
 import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
@@ -15,6 +17,17 @@ function HeroSection() {
     <section className={style.hero}>
       <Navbar variant="gray" />
 
+      <div className={style.signals}>
+        <img src={lightning} className={`${style.bolt} ${style.boltStudio}`} alt="" />
+        <img src={lightning} className={`${style.bolt} ${style.boltEuropa}`} alt="" />
+        <img src={lightning} className={`${style.bolt} ${style.boltNovoe}`} alt="" />
+      </div>
+      <div className={style.signalsRight}>
+        <img src={lightning} className={`${style.bolt} ${style.boltRetro}`} alt="" />
+        <img src={lightning} className={`${style.bolt} ${style.boltRusskoe}`} alt="" />
+        <img src={lightning} className={`${style.bolt} ${style.boltRoad}`} alt="" />
+      </div>
+
       <img src={studioIcon} className={`${style.logo} ${style.studio}`} alt="" />
       <img src={EuropeIcon} className={`${style.logo} ${style.europa}`} alt="" />
       <img src={RetroIcon} className={`${style.logo} ${style.retro}`} alt="" />
@@ -23,14 +36,13 @@ function HeroSection() {
       <img src={RoadIcon} className={`${style.logo} ${style.road}`} alt="" />
 
       <div className={style.content}>
+        <img src={MirIcon} className={style.mir} alt="" />
         <span className={style.badge}>ваша эффективная</span>
 
         <h1>
-          реклама
+          Реклама на радио,
           <br />
-          <span>на популярных</span>
-          <br />
-          радиостанциях
+          <span>которую слышат</span>
         </h1>
 
         <div className={style.stats}>
@@ -40,12 +52,12 @@ function HeroSection() {
           </div>
 
           <div>
-            <strong>12 городов</strong>
+            <strong>5 городов</strong>
             <p>вещания сети</p>
           </div>
 
           <div>
-            <strong>5 регионов</strong>
+            <strong>3 региона</strong>
             <p>Дальнего Востока</p>
           </div>
         </div>
