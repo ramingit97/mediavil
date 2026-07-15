@@ -4,7 +4,7 @@ import style from "./radioStations.module.css";
 import europaCard from "@/assets/images/ЕвропаCard.png";
 import novoeCard from "@/assets/images/новоеCard.png";
 import russianCard from "@/assets/images/РусскоеCard.png";
-import retroCard from "@/assets/images/ретроCard.png";
+import retroCard from "@/assets/images/retroPeople.png";
 import roadCard from "@/assets/images/roadCard.png";
 import studioCard from "@/assets/images/studioCard.png";
 import mirCard from "@/assets/images/radioMirCard.png";
@@ -31,7 +31,7 @@ function RadioStationsSection() {
     {
       image: europaCard,
       logo: EuropeIcon,
-      logoColor: "black",
+      logoColor: "white",
       title: "Europa Plus",
       description:
         "Топ 40, EDM, Pop. Только актуальные мировые и российские хиты",
@@ -136,7 +136,11 @@ function RadioStationsSection() {
                   <img
                     src={station.image}
                     alt={station.title}
-                    className={style.people}
+                    className={`${style.people}${
+                      station.path === ROUTER.RuskoeRadio
+                        ? " " + style.peopleSmall
+                        : ""
+                    }`}
                   />
 
                   <div className={style.info}>

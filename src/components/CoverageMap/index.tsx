@@ -8,12 +8,12 @@ import partizansk from "@/assets/images/partizansk.svg";
 import nahodka from "@/assets/images/nahodka.svg";
 import habarovsk from "@/assets/images/habarovsk.svg";
 
-import novoe from "@/assets/images/Новое.png";
-import studio from "@/assets/images/Студио.png";
-import road from "@/assets/images/Дорожное.png";
-import retro from "@/assets/images/Ретрo.png";
-import russian from "@/assets/images/Русское.png";
-import europe from "@/assets/images/Европа.svg";
+import novoe from "@/assets/images/logo-novoe.png";
+import studio from "@/assets/images/logo-studio.png";
+import road from "@/assets/images/logo-road.png";
+import retro from "@/assets/images/logo-retro.png";
+import russian from "@/assets/images/logo-russkoe.png";
+import europe from "@/assets/images/logo-europa.png";
 import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 import CoverageDashedWaveIcon from "@/assets/icons/CoverageDashedWaveIcon";
 
@@ -155,9 +155,6 @@ function CoverageMapSection() {
                     src={radio.logo}
                     alt={radio.name}
                     className={style.logo}
-                    style={
-                      radio.logo === europe ? { filter: "brightness(0)" } : undefined
-                    }
                   />
                   <h3>{radio.name}</h3>
                   {radio.stations.map((station, i) => (

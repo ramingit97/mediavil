@@ -1,4 +1,4 @@
-import NovoeLogo from "@/assets/images/novoe.svg?react";
+import NovoeLogo from "@/assets/images/logo-novoe.png";
 
 import NovoeHero from "@/components/novoeHero";
 

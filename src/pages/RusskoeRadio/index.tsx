@@ -3,7 +3,7 @@ import AdsSection from "@/components/AdsSection";
 import MediavilSection from "@/components/MediavilSection";
 import PromoSection from "@/components/promoSection";
 import Footer from "@/components/footer";
-import ruskoeLogo from "@/assets/images/russkoe.svg?react";
+import ruskoeLogo from "@/assets/images/logo-russkoe.png";
 import littleImg1 from "@/assets/images/mainLittle1.png";
 import littleImg2 from "@/assets/images/main2.png";
 import littleImg3 from "@/assets/images/mainLittle2.png";

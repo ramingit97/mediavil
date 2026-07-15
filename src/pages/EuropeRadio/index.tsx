@@ -1,4 +1,4 @@
-import EuropeLogo from "@/assets/images/Европа.svg?react";
+import EuropeLogo from "@/assets/images/logo-europa.png";
 import Footer from "@/components/footer";
 import PromoSection from "@/components/promoSection";
 import MediavilSection from "@/components/MediavilSection";

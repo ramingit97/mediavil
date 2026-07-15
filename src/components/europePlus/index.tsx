@@ -11,7 +11,7 @@ function EuropePlus({
   title,
   description,
   frequencies,
-  logo: Logo,
+  logo,
   img1,
   img2,
   img3,
@@ -90,7 +90,7 @@ function EuropePlus({
           <img src={img3} alt="" className={style.smallTwo} />
         </div>
         <div className={style.visual}>
-          <Logo className={style.logo} />
+          <img src={logo} alt={title} className={style.logo} />
 
           <div className={style.stats}>
             <div className={style.statItem}>

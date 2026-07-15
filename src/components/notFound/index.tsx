@@ -1,13 +1,13 @@
 import Navbar from "@/components/navbar";
 import style from "./notFound.module.css";
 
-import EuropeIcon from "@/assets/images/europe.svg";
-import NovoeIcon from "@/assets/images/Новое.png";
-import RussiaIcon from "@/assets/images/Русское.png";
-import RetroIcon from "@/assets/images/Ретрo.png";
-import RoadIcon from "@/assets/images/Дорожное.png";
-import StudioIcon from "@/assets/images/Студио.png";
-import MirIcon from "@/assets/icons/mir.svg";
+import EuropeIcon from "@/assets/images/logo-europa.png";
+import NovoeIcon from "@/assets/images/logo-novoe.png";
+import RussiaIcon from "@/assets/images/logo-russkoe.png";
+import RetroIcon from "@/assets/images/logo-retro.png";
+import RoadIcon from "@/assets/images/logo-road.png";
+import StudioIcon from "@/assets/images/logo-studio.png";
+import MirIcon from "@/assets/images/logo-mir.png";
 
 import { Link } from "react-router-dom";
 import { ROUTER } from "@/constants/router";

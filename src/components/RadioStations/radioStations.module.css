@@ -108,6 +108,12 @@
   z-index: 2;
 }
 
+/* Русское card photo is a wider 3-person shot that ran under the text —
+   shrink it a touch so it clears the description column. */
+.peopleSmall {
+  height: 230px;
+}
+
 .info {
   position: relative;
   z-index: 3;

@@ -15,7 +15,7 @@ export interface InfoCard {
 interface NovoeHeroProps {
   title: string;
   description: string[];
-  logo: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  logo: string;
   frequencies: FrequencyItem[];
   infoCards: InfoCard[];
   highlights?: string[];
@@ -38,7 +38,7 @@ function NovoeHero({
   title,
   description,
   frequencies,
-  logo: Logo,
+  logo,
   infoCards,
   highlights,
   colors = {
@@ -102,7 +102,7 @@ function NovoeHero({
         </div>
 
         <div className={style.right}>
-          <Logo className={style.logo} />
+          <img src={logo} alt={title} className={style.logo} />
 
           <div className={style.description}>
             {description.map((paragraph, index) => (

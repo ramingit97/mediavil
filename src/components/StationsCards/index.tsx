@@ -124,12 +124,7 @@ function StationsCards() {
               </div>
 
               <div className={style.content}>
-                <Logo
-                  className={style.logo}
-                  style={
-                    station.page === ROUTER.Europe ? { color: "black" } : undefined
-                  }
-                />
+                <Logo className={style.logo} />
 
                 <h2>{station.title}</h2>
 

@@ -1,4 +1,4 @@
-import RoadLogo from "@/assets/images/road.svg?react";
+import RoadLogo from "@/assets/images/logo-road.png";
 
 import EuropePlus from "@/components/europePlus";
 

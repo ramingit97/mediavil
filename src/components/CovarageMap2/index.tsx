@@ -12,12 +12,12 @@ import partizansk from "@/assets/images/partizansk.svg";
 import nahodka from "@/assets/images/nahodka.svg";
 import habarovsk from "@/assets/images/habarovsk.svg";
 
-import studioIcon from "@/assets/images/Студио.png";
-import RetroIcon from "@/assets/images/Ретрo.png";
-import EuropeIcon from "@/assets/images/europe.svg";
-import RussiaIcon from "@/assets/images/Русское.png";
-import NovoeIcon from "@/assets/images/Новое.png";
-import RoadIcon from "@/assets/images/Дорожное.png";
+import studioIcon from "@/assets/images/logo-studio.png";
+import RetroIcon from "@/assets/images/logo-retro.png";
+import EuropeIcon from "@/assets/images/logo-europa.png";
+import RussiaIcon from "@/assets/images/logo-russkoe.png";
+import NovoeIcon from "@/assets/images/logo-novoe.png";
+import RoadIcon from "@/assets/images/logo-road.png";
 
 function CoverageMapSection() {
   const [activeTab, setActiveTab] = useState("stations");
@@ -141,14 +141,7 @@ function CoverageMapSection() {
             {data.map((item, index) => (
               <div className={style.card} key={index}>
                 {item.icon ? (
-                  <img
-                    src={item.icon}
-                    alt=""
-                    className={style.icon}
-                    style={
-                      item.icon === EuropeIcon ? { filter: "brightness(0)" } : undefined
-                    }
-                  />
+                  <img src={item.icon} alt="" className={style.icon} />
                 ) : (
                   <div className={style.iconPlaceholder}></div>
                 )}
