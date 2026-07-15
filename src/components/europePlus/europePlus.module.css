@@ -132,16 +132,8 @@ hr {
 
 .logo {
   position: static;
-  max-width: 240px;
-  max-height: 130px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  background: #fff;
-  padding: 20px 26px;
-  border-radius: 18px;
-  box-sizing: content-box;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  width: 175px;
+  color: var(--logo-color, white) !important;
   margin-bottom: 40px;
 }
 
@@ -287,8 +279,7 @@ hr {
   }
 
   .logo {
-    max-width: 200px;
-    max-height: 110px;
+    width: 145px;
   }
 
   .play {
@@ -537,9 +528,8 @@ hr {
     color: #555;
   }
   .logo {
-    max-width: 200px;
-    max-height: 104px;
-    padding: 16px 20px;
+    width: 174px;
+    height: 72px;
     margin-bottom: 28px;
   }
 

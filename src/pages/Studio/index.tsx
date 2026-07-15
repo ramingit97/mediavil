@@ -1,4 +1,4 @@
-import studioLogo from "@/assets/images/logo-studio.png";
+import studioLogo from "@/assets/images/studio.svg?react";
 
 import EuropePlus from "@/components/europePlus";
 

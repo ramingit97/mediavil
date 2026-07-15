@@ -1,4 +1,4 @@
-import EuropeLogo from "@/assets/images/logo-europa.png";
+import EuropeLogo from "@/assets/images/Европа.svg?react";
 import Footer from "@/components/footer";
 import PromoSection from "@/components/promoSection";
 import MediavilSection from "@/components/MediavilSection";
@@ -41,7 +41,7 @@ function EuropeRadio() {
           playBg: "#ff4651",
           cardShadow: "#7398f2",
           navShadow: "#ff4651",
-          logoColor: "black",
+          logoColor: "white",
         }}
       />
       <AdsSection

@@ -162,16 +162,8 @@
 }
 
 .logo {
-  max-width: 230px;
-  max-height: 120px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  background: #fff;
-  padding: 18px 24px;
-  border-radius: 18px;
-  box-sizing: content-box;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+  width: 175px;
+  color: var(--logo-color, white) !important;
   align-self: center;
   margin-bottom: 28px;
 }
@@ -289,8 +281,7 @@
   }
 
   .logo {
-    max-width: 200px;
-    max-height: 108px;
+    width: 145px;
   }
 }
 

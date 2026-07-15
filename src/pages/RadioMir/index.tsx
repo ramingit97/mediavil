@@ -1,4 +1,4 @@
-import MirLogo from "@/assets/images/logo-mir.png";
+import MirLogo from "@/assets/images/radioMir.svg?react";
 
 import EuropePlus from "@/components/europePlus";
 

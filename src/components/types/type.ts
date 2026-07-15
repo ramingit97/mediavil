@@ -8,7 +8,7 @@ export interface MainDetails {
   title: string;
   description: string;
   frequencies: FrequencyItem[];
-  logo: string;
+  logo: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   img1: string;
   img2: string;
   img3: string;

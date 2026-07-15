@@ -1,4 +1,4 @@
-import RetroLogo from "@/assets/images/logo-retro.png";
+import RetroLogo from "@/assets/images/retro.svg?react";
 
 import EuropePlus from "@/components/europePlus";
 
