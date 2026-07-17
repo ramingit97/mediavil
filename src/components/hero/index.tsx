@@ -27,6 +27,9 @@ function HeroSection() {
         <img src={lightning} className={`${style.bolt} ${style.boltRusskoe}`} alt="" />
         <img src={lightning} className={`${style.bolt} ${style.boltRoad}`} alt="" />
       </div>
+      <div className={style.signalsMir}>
+        <img src={lightning} className={`${style.bolt} ${style.boltMir}`} alt="" />
+      </div>
 
       <img src={studioIcon} className={`${style.logo} ${style.studio}`} alt="" />
       <img src={EuropeIcon} className={`${style.logo} ${style.europa}`} alt="" />

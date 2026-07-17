@@ -108,7 +108,8 @@
    there to the logos so they read as emanating from the heading (and never
    cross the heading text). */
 .signals,
-.signalsRight {
+.signalsRight,
+.signalsMir {
   position: absolute;
   top: 542px;
   width: 0;
@@ -125,44 +126,56 @@
   left: calc(50% + 320px);
 }
 
+/* Anchor for the Mir bolt: hidden behind the badge (badge spans y 353–412),
+   so the bolt emerges from the badge top edge and runs up to the Mir logo. */
+.signalsMir {
+  left: calc(50% - 24px);
+  top: 395px;
+}
+
 .bolt {
   position: absolute;
   left: 0;
   top: 0;
   height: auto;
   max-width: none;
-  opacity: 0.4;
+  opacity: 0.6;
   transform-origin: 0 0;
 }
 
 .boltStudio {
-  width: 244px;
-  transform: rotate(-165.6deg);
+  width: 268px;
+  transform: rotate(-156.6deg);
 }
 
 .boltEuropa {
-  width: 231px;
-  transform: rotate(127.4deg);
+  width: 212px;
+  transform: rotate(138.5deg);
 }
 
 .boltNovoe {
-  width: 326px;
-  transform: rotate(85deg);
+  width: 286px;
+  transform: rotate(80.6deg);
 }
 
 .boltRetro {
-  width: 235px;
-  transform: rotate(-95.8deg);
+  width: 268px;
+  transform: rotate(-101.6deg);
 }
 
 .boltRusskoe {
-  width: 204px;
-  transform: rotate(-23.9deg);
+  width: 212px;
+  transform: rotate(-36.7deg);
 }
 
 .boltRoad {
-  width: 322px;
-  transform: rotate(18deg);
+  width: 286px;
+  transform: rotate(21.2deg);
+}
+
+.boltMir {
+  width: 134px;
+  transform: rotate(-119.9deg);
 }
 
 .logo {
@@ -203,39 +216,42 @@
    they stay a fixed distance from the center — matching the center-anchored
    bolts, which then reach them at any viewport width. Offsets come from the
    measured logo centers at the 1728px design width. */
+/* Tops differ per pair because card heights differ (logo aspect ratios) —
+   values are chosen so the vertical CENTERS of each left/right pair match:
+   studio+retro y=277, europa+russkoe y=552, novoe+road y=819. */
 .studio {
-  top: 240px;
-  left: calc(50% - 470px);
+  top: 242px;
+  left: calc(50% - 458px);
   transform: translateX(-50%);
 }
 
 .europa {
-  top: 505px;
-  left: calc(50% - 565px);
+  top: 509px;
+  left: calc(50% - 556px);
   transform: translateX(-50%);
 }
 
 .retro {
-  top: 225px;
-  left: calc(50% + 445px);
+  top: 223px;
+  left: calc(50% + 458px);
   transform: translateX(-50%);
 }
 
 .russian {
-  top: 505px;
-  left: calc(50% + 548px);
+  top: 500px;
+  left: calc(50% + 556px);
   transform: translateX(-50%);
 }
 
 .novoe {
-  top: 780px;
-  left: calc(50% - 483px);
+  top: 779px;
+  left: calc(50% - 478px);
   transform: translateX(-50%);
 }
 
 .road {
   top: 755px;
-  left: calc(50% + 473px);
+  left: calc(50% + 478px);
   transform: translateX(-50%);
 }
 
@@ -289,7 +305,8 @@
    logos back to edge-anchored positions (reset the center-anchoring transform). */
 @media (max-width: 1450px) {
   .signals,
-  .signalsRight {
+  .signalsRight,
+  .signalsMir {
     display: none;
   }
 
