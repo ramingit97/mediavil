@@ -35,7 +35,9 @@
   z-index: 5;
   text-align: center;
 
-  margin-top: 90px;
+  /* 70 + mir plate 92 + mir margin 75 = 237 to the badge — same as the
+     original 90 + 110 + 37, so the heading (= --origin-y) never moves. */
+  margin-top: 70px;
 }
 
 .badge {
@@ -129,11 +131,16 @@
   transform-origin: 0 0;
 }
 
+/* Corner bolts (Studio/Retro/Novoe/Road) are aimed through the MIDPOINT of
+   the card's near edge (tip lands 6% past it, inside the card) — aiming at
+   the card center would make the shallow ray visibly enter at a corner.
+   The top pair's masks reveal the bolt almost down to the heading's letter
+   tops (per the reference design), the bottom pair fades before the stats. */
 .boltStudio {
-  width: 464px;
-  transform: rotate(-191.4deg);
-  -webkit-mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
-  mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
+  width: 474px;
+  transform: rotate(-195.8deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
+  mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
 }
 
 .boltEuropa {
@@ -144,35 +151,40 @@
 }
 
 .boltNovoe {
-  width: 507px;
-  transform: rotate(108.7deg);
-  -webkit-mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
-  mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
+  width: 512px;
+  transform: rotate(113.4deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
+  mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
 }
 
+/* Right-side bolts are the LEFT bolt mirrored (rotate(-leftAngle) scaleX(-1)):
+   the lightning art is not symmetric around its own axis, so a merely
+   mirror-rotated copy wanders DOWN into the heading on the right side. With
+   the art itself flipped, each right bolt is the exact reflection of its left
+   twin (masks are in local pre-transform coords, so they flip along). */
 .boltRetro {
-  width: 464px;
-  transform: rotate(-66.9deg);
-  -webkit-mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
-  mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
+  width: 474px;
+  transform: rotate(195.8deg) scaleX(-1);
+  -webkit-mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
+  mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
 }
 
 .boltRusskoe {
   width: 500px;
-  transform: rotate(-35.6deg);
+  transform: rotate(-137.4deg) scaleX(-1);
   -webkit-mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
   mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
 }
 
 .boltRoad {
-  width: 507px;
-  transform: rotate(-6.9deg);
-  -webkit-mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
-  mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
+  width: 512px;
+  transform: rotate(-113.4deg) scaleX(-1);
+  -webkit-mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
+  mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
 }
 
 .boltMir {
-  width: 231px;
+  width: 257px;
   transform: rotate(-129.1deg);
   -webkit-mask-image: linear-gradient(90deg, transparent 60px, #000 100px);
   mask-image: linear-gradient(90deg, transparent 60px, #000 100px);
@@ -206,14 +218,14 @@
    bolt/ring origin) exactly where it was. */
 .mir {
   display: block;
-  width: 82px;
-  max-width: 82px;
+  width: 68px;
+  max-width: 68px;
   box-sizing: content-box;
   background: #fff;
-  padding: 14px;
-  border-radius: 18px;
+  padding: 12px;
+  border-radius: 16px;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14), 0 3px 8px rgba(0, 0, 0, 0.05);
-  margin: 0 auto 37px;
+  margin: 0 auto 75px;
   position: relative;
   z-index: 6;
 }
@@ -222,11 +234,14 @@
    they stay a fixed distance from the center — matching the center-anchored
    bolts, which then reach them at any viewport width. Offsets come from the
    measured logo centers at the 1728px design width. */
-/* Tops differ per pair because card heights differ (logo aspect ratios) —
-   values are chosen so the vertical CENTERS of each left/right pair match:
-   studio+retro y=277, europa+russkoe y=552, novoe+road y=819. */
+/* Within each corner pair the NEAR edge (the one facing the heading) is
+   aligned — studio+retro bottom edge y=321, novoe+road top edge y=767 — so
+   the two bolts of a pair leave the text at perfectly mirrored angles.
+   (Centers can't be used: card heights differ with logo aspect ratios, which
+   made the bolt angles visibly asymmetric.) Europa+russkoe align by center
+   y=552 as before. */
 .studio {
-  top: 242px;
+  top: 252px;
   left: calc(50% - 458px);
   transform: translateX(-50%);
 }
@@ -238,7 +253,7 @@
 }
 
 .retro {
-  top: 223px;
+  top: 212px;
   left: calc(50% + 458px);
   transform: translateX(-50%);
 }
@@ -250,13 +265,13 @@
 }
 
 .novoe {
-  top: 779px;
+  top: 767px;
   left: calc(50% - 478px);
   transform: translateX(-50%);
 }
 
 .road {
-  top: 755px;
+  top: 767px;
   left: calc(50% + 478px);
   transform: translateX(-50%);
 }
