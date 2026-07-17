@@ -136,25 +136,33 @@
    the card center would make the shallow ray visibly enter at a corner.
    The top pair's masks reveal the bolt almost down to the heading's letter
    tops (per the reference design), the bottom pair fades before the stats. */
+/* Corner bolts additionally shift their pivot sideways (left/top on the img,
+   still behind the text where the bolt is masked out) — this steepens the
+   visible slope so the bolt clearly punches into its card instead of grazing
+   it, and moves the visible start slightly away from the heading. Tips land
+   12% past the card's near-edge midpoint so the thick part of the art (not
+   its faint wispy tail) meets the card edge. */
 .boltStudio {
-  width: 474px;
-  transform: rotate(-195.8deg);
-  -webkit-mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
-  mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
+  left: -98px;
+  width: 412px;
+  transform: rotate(-190.4deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 91px, #000 118px);
+  mask-image: linear-gradient(90deg, transparent 91px, #000 118px);
 }
 
 .boltEuropa {
-  width: 500px;
+  width: 535px;
   transform: rotate(137.4deg);
   -webkit-mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
   mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
 }
 
 .boltNovoe {
-  width: 512px;
-  transform: rotate(113.4deg);
-  -webkit-mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
-  mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
+  left: -90px;
+  width: 463px;
+  transform: rotate(108.2deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 146px, #000 181px);
+  mask-image: linear-gradient(90deg, transparent 146px, #000 181px);
 }
 
 /* Right-side bolts are the LEFT bolt mirrored (rotate(-leftAngle) scaleX(-1)):
@@ -163,24 +171,26 @@
    the art itself flipped, each right bolt is the exact reflection of its left
    twin (masks are in local pre-transform coords, so they flip along). */
 .boltRetro {
-  width: 474px;
-  transform: rotate(195.8deg) scaleX(-1);
-  -webkit-mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
-  mask-image: linear-gradient(90deg, transparent 110px, #000 137px);
+  left: 98px;
+  width: 412px;
+  transform: rotate(190.4deg) scaleX(-1);
+  -webkit-mask-image: linear-gradient(90deg, transparent 91px, #000 118px);
+  mask-image: linear-gradient(90deg, transparent 91px, #000 118px);
 }
 
 .boltRusskoe {
-  width: 500px;
+  width: 535px;
   transform: rotate(-137.4deg) scaleX(-1);
   -webkit-mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
   mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
 }
 
 .boltRoad {
-  width: 512px;
-  transform: rotate(-113.4deg) scaleX(-1);
-  -webkit-mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
-  mask-image: linear-gradient(90deg, transparent 212px, #000 247px);
+  left: 90px;
+  width: 463px;
+  transform: rotate(-108.2deg) scaleX(-1);
+  -webkit-mask-image: linear-gradient(90deg, transparent 146px, #000 181px);
+  mask-image: linear-gradient(90deg, transparent 146px, #000 181px);
 }
 
 .boltMir {
