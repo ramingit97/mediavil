@@ -1,4 +1,7 @@
 .hero {
+  /* Single origin point of the composition: the heading center. The radial
+     rings, all 7 lightning bolts and the content are centered on it. */
+  --origin-y: 518px;
   min-height: 820px;
   width: 100%;
   background: #f7f7f7;
@@ -7,28 +10,24 @@
   padding-bottom: 430px;
 }
 
+/* Concentric "discs" stacked from small to large, each casting a soft shadow
+   just outside its edge — gives the rings volume (vs a flat repeating
+   gradient). Layers are listed smallest-first so each disc paints on top of
+   the larger one below it; the semi-transparent shadow band shows the next
+   disc's fill through it. */
 .hero::before {
   content: "";
-
   position: absolute;
-  left: 50%;
-  top: -380px;
-
-  transform: translateX(-50%);
-
-  width: 1600px;
-  height: 1600px;
-
-  border-radius: 50%;
-
-  background: repeating-radial-gradient(
-    circle,
-    #f9f9f9 0px,
-    #f0f0f0 50px,
-    transparent 2px,
-    transparent 110px
-  );
-
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 169px, rgba(30, 30, 30, 0.05) 170px, rgba(30, 30, 30, 0) 226px),
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 299px, rgba(30, 30, 30, 0.05) 300px, rgba(30, 30, 30, 0) 356px),
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 429px, rgba(30, 30, 30, 0.05) 430px, rgba(30, 30, 30, 0) 486px),
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 559px, rgba(30, 30, 30, 0.05) 560px, rgba(30, 30, 30, 0) 616px),
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 689px, rgba(30, 30, 30, 0.05) 690px, rgba(30, 30, 30, 0) 746px),
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 819px, rgba(30, 30, 30, 0.05) 820px, rgba(30, 30, 30, 0) 876px),
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 949px, rgba(30, 30, 30, 0.05) 950px, rgba(30, 30, 30, 0) 1006px),
+    radial-gradient(circle at 50% var(--origin-y), #fafafa 1079px, rgba(30, 30, 30, 0.05) 1080px, rgba(30, 30, 30, 0) 1136px);
   z-index: 1;
 }
 .content {
@@ -48,6 +47,7 @@
   font-weight: bold;
   display: inline-block;
   margin-bottom: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
 }
 
 .content h1 {
@@ -100,37 +100,23 @@
   font-size: 14px;
 }
 
-/* Lightning bolts radiating from the hero center out to each station logo.
-   `.signals` is a zero-size anchor at the heading center; each `.bolt` pivots
-   from that point (transform-origin: left center) and is rotated + sized to
-   reach its logo. Tuned for the wide desktop layout (hidden below 1200px). */
-/* Two anchor points at the left/right edges of the heading — bolts fan out from
-   there to the logos so they read as emanating from the heading (and never
-   cross the heading text). */
-.signals,
-.signalsRight,
-.signalsMir {
+/* All 7 lightning bolts radiate from ONE zero-size anchor at the heading
+   center (--origin-y) — same point the background rings are centered on, so
+   the whole composition reads as waves from a single transmitter. Each bolt
+   pivots from that point (transform-origin: 0 0) and is rotated + sized so
+   its tip lands on a logo-card center (covered by the card).
+   The inner segment of every bolt would cross the heading/stats text, so each
+   bolt carries a linear-gradient mask along its own axis: transparent until
+   just past the text edge on its ray, then fading in. Mask distances are in
+   the bolt's local (pre-rotation) coords: X = ray-distance x cos(39.1deg). */
+.signals {
   position: absolute;
-  top: 542px;
+  top: var(--origin-y);
+  left: 50%;
   width: 0;
   height: 0;
   z-index: 2;
   pointer-events: none;
-}
-
-.signals {
-  left: calc(50% - 320px);
-}
-
-.signalsRight {
-  left: calc(50% + 320px);
-}
-
-/* Anchor for the Mir bolt: hidden behind the badge (badge spans y 353–412),
-   so the bolt emerges from the badge top edge and runs up to the Mir logo. */
-.signalsMir {
-  left: calc(50% - 24px);
-  top: 395px;
 }
 
 .bolt {
@@ -144,38 +130,52 @@
 }
 
 .boltStudio {
-  width: 268px;
-  transform: rotate(-156.6deg);
+  width: 464px;
+  transform: rotate(-191.4deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
+  mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
 }
 
 .boltEuropa {
-  width: 212px;
-  transform: rotate(138.5deg);
+  width: 500px;
+  transform: rotate(137.4deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
+  mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
 }
 
 .boltNovoe {
-  width: 286px;
-  transform: rotate(80.6deg);
+  width: 507px;
+  transform: rotate(108.7deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
+  mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
 }
 
 .boltRetro {
-  width: 268px;
-  transform: rotate(-101.6deg);
+  width: 464px;
+  transform: rotate(-66.9deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
+  mask-image: linear-gradient(90deg, transparent 119px, #000 164px);
 }
 
 .boltRusskoe {
-  width: 212px;
-  transform: rotate(-36.7deg);
+  width: 500px;
+  transform: rotate(-35.6deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
+  mask-image: linear-gradient(90deg, transparent 250px, #000 295px);
 }
 
 .boltRoad {
-  width: 286px;
-  transform: rotate(21.2deg);
+  width: 507px;
+  transform: rotate(-6.9deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
+  mask-image: linear-gradient(90deg, transparent 214px, #000 259px);
 }
 
 .boltMir {
-  width: 134px;
-  transform: rotate(-119.9deg);
+  width: 231px;
+  transform: rotate(-129.1deg);
+  -webkit-mask-image: linear-gradient(90deg, transparent 60px, #000 100px);
+  mask-image: linear-gradient(90deg, transparent 60px, #000 100px);
 }
 
 .logo {
@@ -197,17 +197,23 @@
   background: #fff;
   padding: 16px 22px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14), 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Mir sits in the content flow directly above the badge and overlaps its top
-   edge (in front of it), as in the Figma. The negative margin creates the
-   overlap; content's margin-top is reduced to keep the heading in place. */
+/* Mir sits in the content flow directly above the badge, on the same white
+   card treatment as the six side logos. The plate adds 28px height (2x14
+   padding), so margin-bottom is 65 - 28 = 37px to keep the heading (and the
+   bolt/ring origin) exactly where it was. */
 .mir {
   display: block;
   width: 82px;
   max-width: 82px;
-  margin: 0 auto 65px;
+  box-sizing: content-box;
+  background: #fff;
+  padding: 14px;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14), 0 3px 8px rgba(0, 0, 0, 0.05);
+  margin: 0 auto 37px;
   position: relative;
   z-index: 6;
 }
@@ -304,9 +310,7 @@
 /* Below the wide desktop the bolts can't line up, so hide them and switch the
    logos back to edge-anchored positions (reset the center-anchoring transform). */
 @media (max-width: 1450px) {
-  .signals,
-  .signalsRight,
-  .signalsMir {
+  .signals {
     display: none;
   }
 
@@ -354,6 +358,7 @@
 
 @media (max-width: 991px) {
   .hero {
+    --origin-y: 320px;
     min-height: 980px;
     padding-bottom: 220px;
   }
@@ -421,6 +426,7 @@
 
 @media (max-width: 768px) {
   .hero {
+    --origin-y: 280px;
     min-height: 760px;
     padding-bottom: 130px;
   }
@@ -463,16 +469,6 @@
 
   .link {
     font-size: 12px;
-  }
-
-  .hero::before {
-    background: repeating-radial-gradient(
-      circle,
-      #f9f9f9 0px,
-      #f0f0f0 150px,
-      transparent 2px,
-      transparent 110px
-    );
   }
 
   .logo {
