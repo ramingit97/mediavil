@@ -1,119 +1,162 @@
+/* Figma layout: the map is a full-bleed background layer anchored to the
+   top-left of the section (its own aspect ratio, ~83% of the width — the strip
+   right of Sakhalin stays plain background). The heading, subtitle, tabs and
+   the city/station cards float OVER the map, shifted to the right half. */
+
 .section {
-  background: #f7f7f7;
-  padding: 70px 0 180px;
+  background: #f9f9f9;
+  padding: 70px 0 190px;
+  /* Tall enough to show the whole map (map height = 83.4vw / 1.461) */
+  min-height: 59vw;
 
   position: relative;
   overflow: hidden;
 }
 
-.section h2,
-.content,
-.right,
-.tabs,
-.cards,
-.card {
-  position: relative;
-  z-index: 10;
+.mapBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 83.4%;
+  aspect-ratio: 1584 / 1084;
+  pointer-events: none;
 }
 
-.section h2 {
-  margin: 0 0 40px;
+.mapBg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* Fade the bottom edge into the section background (no visible seam) */
+  -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 99%);
+  mask-image: linear-gradient(180deg, #000 82%, transparent 99%);
+}
+
+.dot {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  margin: -5px 0 0 -5px;
+  background: #e30613;
+  border-radius: 50%;
+}
+
+.head {
+  position: relative;
+  z-index: 5;
+  /* Centered on the 67%-axis of the section, like the Figma frame */
+  margin-left: 40%;
+  width: 54%;
   text-align: center;
+}
+
+.head h2 {
+  margin: 0 0 16px;
   font-size: 32px;
   font-weight: 800;
   color: #0f4d82;
 }
 
-.content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  max-width: 1800px;
-  margin: 0 auto;
-}
-
-.mapBox {
-  width: 58%;
-  flex-shrink: 0;
-}
-
-.mapBox img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.right {
-  width: 42%;
-
-  padding-right: 40px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.subtitle {
+  margin: 0 0 55px;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #8f8f8f;
 }
 
 .tabs {
   display: flex;
   justify-content: center;
-
-  gap: 42px;
-
-  margin-bottom: 65px;
+  gap: 44px;
+  margin-bottom: 55px;
 }
 
+.tabs button {
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  font: inherit;
+  font-size: 17px;
+  font-weight: 800;
+  color: #a5a5a5;
+
+  padding: 0 2px 7px;
+  border-bottom: 2px dashed transparent;
+  cursor: pointer;
+}
+
+.tabs .active {
+  color: #e30613;
+  border-bottom-color: currentColor;
+}
+
+.tabIcon {
+  width: 20px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* 4-column grid over the right part of the map. The first card starts in
+   column 2 → row 1 holds items 0-2 (columns 2-4), row 2 holds items 3-6.
+   In the stations view (6 items) the 4th item also starts in column 2 so
+   both rows sit aligned under each other. */
 .cards {
-  width: 100%;
+  position: relative;
+  z-index: 5;
+
+  margin-left: 25.5%;
+  margin-top: 200px;
+  width: 68.5%;
 
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 55px 28px;
+}
 
-  grid-template-columns: repeat(3, 1fr);
+.cards > :first-child {
+  grid-column: 2;
+}
 
-  gap: 65px 45px;
+.stationsGrid > :nth-child(4) {
+  grid-column: 2;
 }
 
 .card {
   text-align: center;
 }
 
-.tabs button {
-  border: none;
-  background: transparent;
-  color: #aaa;
-  font-size: 18px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.tabs .active {
-  color: #e30613;
-  text-decoration: underline dashed;
-  text-underline-offset: 5px;
+/* Южно-Сахалинск: чуть правее, чем его колонка сетки (по макету) */
+.yuzhno {
+  transform: translateX(26px);
 }
 
 .icon {
-  width: 67px;
-  height: 67px;
-  margin: 0 auto 12px;
+  height: 46px;
+  width: auto;
+  max-width: 100px;
   object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
 }
 
-.iconPlaceholder {
-  width: 42px;
-  height: 42px;
-  margin: 0 auto 12px;
-  background: #ddd;
-  border-radius: 6px;
+.stationsGrid .icon {
+  height: 54px;
 }
 
 .card h3 {
-  margin: 0 0 18px;
-  font-size: 21px;
-  font-weight: 800;
+  margin: 0 0 14px;
+  /* По макету: Calibri Bold 28/30, по центру (Carlito — клон для не-Windows) */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: center;
   color: #0f4d82;
+  white-space: pre-line;
 }
 
 .card ul {
@@ -123,44 +166,25 @@
 }
 
 .card li {
-  margin-bottom: 7px;
-  font-size: 13px;
-  line-height: 1.35;
-  color: #333;
+  margin-bottom: 2px;
+  /* По макету: Calibri Bold 21/28, по центру */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: center;
+  color: #454545;
 }
 
-.card li::first-line {
-  font-weight: 800;
+.card li b {
+  font-weight: 700;
 }
 
-.bottomWave {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 170px;
-
-  overflow: hidden;
-  z-index: 1;
-  pointer-events: none;
+.card li span {
+  margin-left: 7px;
+  color: #9a9a9a;
 }
-
-/* .bottomWave::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 144px;
-  background: white;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1902 180' preserveAspectRatio='none'%3E%3Cpath d='M1902 57.4987C1742.75 55.6198 1399.71 51.4017 1327 70.7268C1236.11 94.8832 1190.48 160.773 1157.5 138.227C1124.52 115.681 985.863 6.35571 843.5 48.2268C701.137 90.0979 627.322 181.507 530 122.727C432.678 63.9462 281.313 -53.2102 -1 29.7268L-1 144L1902 180Z' fill='black'/%3E%3C/svg%3E");
-  -webkit-mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1902 180' preserveAspectRatio='none'%3E%3Cpath d='M1902 57.4987C1742.75 55.6198 1399.71 51.4017 1327 70.7268C1236.11 94.8832 1190.48 160.773 1157.5 138.227C1124.52 115.681 985.863 6.35571 843.5 48.2268C701.137 90.0979 627.322 181.507 530 122.727C432.678 63.9462 281.313 -53.2102 -1 29.7268L-1 144L1902 180Z' fill='black'/%3E%3C/svg%3E");
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-} */
 
 .wave_box {
   position: absolute;
@@ -185,40 +209,37 @@
   pointer-events: none;
 }
 
-.waveBottom {
-  position: absolute;
-  left: 0;
-  bottom: 40px;
-
-  width: 100%;
-  height: 95px;
-
-  z-index: 2;
-  pointer-events: none;
-}
-
+/* Below the wide desktop the overlay doesn't fit — stack the map above the
+   content (the map keeps its full aspect, Sakhalin stays visible). */
 @media (max-width: 1200px) {
   .section {
+    min-height: auto;
     padding: 60px 0 150px;
   }
 
-  .content {
-    max-width: 1180px;
-    gap: 20px;
+  .mapBg {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
   }
 
-  .mapBox {
-    width: 54%;
+  .head {
+    margin: 0 auto;
+    width: auto;
+    padding: 0 24px;
   }
 
-  .right {
-    width: 46%;
-    padding-right: 24px;
+  .head h2 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 14px;
   }
 
   .tabs {
-    gap: 28px;
-    margin-bottom: 48px;
+    gap: 30px;
+    margin-bottom: 44px;
   }
 
   .tabs button {
@@ -226,104 +247,67 @@
   }
 
   .cards {
+    margin: 0 auto;
+    width: min(92%, 1000px);
+
+    grid-template-columns: repeat(3, 1fr);
     gap: 42px 28px;
   }
 
-  .icon {
-    width: 56px;
-    height: 56px;
+  .cards > :first-child,
+  .stationsGrid > :nth-child(4) {
+    grid-column: auto;
   }
 
-  .card h3 {
-    font-size: 18px;
-  }
-
-  .card li {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 991px) {
-  .section {
-    padding: 50px 24px 100px;
-  }
-
-  .section h2 {
-    font-size: 28px;
-    margin-bottom: 28px;
-  }
-
-  .content {
-    max-width: 760px;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .mapBox {
-    width: 100%;
-  }
-
-  .mapBox img {
-    width: 100%;
-    display: block;
-
-    object-fit: cover;
-    object-position:right;
-
-    border-radius: 18px;
-  }
-
-  .right {
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .tabs {
-    width: 100%;
-    gap: 34px;
-    margin-bottom: 42px;
-  }
-
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px 28px;
-  }
-
-  .waveBottom,
-  .bottomWave {
-    display: none;
+  .yuzhno {
+    transform: none;
   }
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 36px 20px 70px;
+    padding: 36px 0 70px;
   }
 
-  .section h2 {
-    margin-bottom: 12px;
+  .mapBg {
+    margin-bottom: 28px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    margin: -3px 0 0 -3px;
+  }
+
+  .head {
+    padding: 0 20px;
+  }
+
+  .head h2 {
+    margin-bottom: 10px;
     font-size: 24px;
   }
 
-  .content {
-    gap: 24px;
+  .subtitle {
+    font-size: 12px;
+    margin-bottom: 22px;
   }
 
-  .mapBox img {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    object-position: center top;
+  .subtitle br {
+    display: none;
   }
 
   .tabs {
-    gap: 38px;
-    margin-bottom: 42px;
+    gap: 26px;
+    margin-bottom: 38px;
   }
 
   .tabs button {
     font-size: 13px;
+  }
+
+  .tabIcon {
+    width: 16px;
   }
 
   .cards {
@@ -339,18 +323,23 @@
   }
 
   .icon {
-    width: 55px;
-    height: 55px;
+    height: 42px;
     margin-bottom: 10px;
   }
 
+  .stationsGrid .icon {
+    height: 48px;
+  }
+
   .card h3 {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 22px;
     margin-bottom: 10px;
   }
 
   .card li {
-    font-size: 11px;
-    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 4px;
   }
 }

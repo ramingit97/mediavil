@@ -8,9 +8,10 @@ import RoadIcon from "@/assets/images/logo-road.png";
 import MirIcon from "@/assets/images/logo-mir.png";
 import lightning from "@/assets/images/lightning.png";
 import Navbar from "@/components/navbar";
+import AudioIcon from "@/assets/icons/audio.svg?react";
 import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
-import HeadphoneIcon from "@/assets/icons/HeadphoneIcon";
+import frogMascot from "@/assets/images/frog-mascot.png";
 
 function HeroSection() {
   return (
@@ -61,7 +62,10 @@ function HeroSection() {
           </div>
         </div>
 
-        <button className={style.btn}>🔊 Запросить медиакит</button>
+        <button className={style.btn}>
+          <AudioIcon className={style.btnIcon} />
+          Запросить медиакит
+        </button>
 
         <a href="#" className={style.link}>
           Получить консультацию
@@ -69,9 +73,13 @@ function HeroSection() {
       </div>
 
       <div className={style.wave_box}>
-        <WaveSectionIcon className={style.waveSvg} fill="#f9f9f9" />
+        <WaveSectionIcon
+          className={style.waveSvg}
+          gradientFrom="#e6e6e6"
+          gradientTo="#f9f9f9"
+        />
         <div className={style.center_svg}>
-          <HeadphoneIcon />
+          <img src={frogMascot} alt="" width={57} height={71} />
         </div>
         <DashedWaveIcon className={style.dashed_svg} />
       </div>

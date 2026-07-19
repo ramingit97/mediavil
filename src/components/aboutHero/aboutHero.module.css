@@ -1,6 +1,6 @@
 .page {
   /* min-height: 100vh; */
-  background: #f6f6f6;
+  background: #f9f9f9;
   position: relative;
   overflow: hidden;
 }
@@ -59,6 +59,16 @@ h1 {
   color: #555;
 }
 
+/* По макету: Gilroy Bold 52/58, область 685px → перенос
+   «Крупнейший медиахолдинг / Дальнего Востока».
+   Двойной селектор перебивает .head h1 из title.module.css. */
+.hero .pageTitle h1 {
+  max-width: 700px;
+  font-size: clamp(32px, 2.74vw, 52px);
+  line-height: 1.115;
+  font-weight: 700;
+}
+
 .content {
   display: flex;
   justify-content: space-between;
@@ -72,11 +82,13 @@ h1 {
 }
 
 .block h3 {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 
+  /* По макету: Calibri Bold 28/30 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
   font-size: 28px;
-  line-height: 1.2;
-  font-weight: 800;
+  line-height: 30px;
+  font-weight: 700;
 
   color: #555;
 }
@@ -85,8 +97,19 @@ h1 {
 .block li {
   color: #666;
 
-  font-size: 21px;
-  line-height: 1.7;
+  /* По макету: Calibri Regular 18/24 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.block p {
+  margin: 0 0 14px;
+}
+
+.block p:last-child {
+  margin-bottom: 0;
 }
 
 .block ul {
@@ -100,18 +123,24 @@ list-style: disc;
 }
 
 .right {
-  width: 430px;
+  /* По макету область «Наша миссия» — 479px */
+  width: 480px;
   flex-shrink: 0;
+  /* По макету правая колонка начинается ниже — «Наша миссия» на уровне
+     блока «География и охват» */
+  padding-top: 160px;
 }
 
 .right h2 {
-  margin: 0 0 45px;
+  margin: 0 0 40px;
 
   text-align: center;
 
+  /* По макету: Calibri Bold 28/30, по центру */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
   font-size: 28px;
-  line-height: 1.4;
-  font-weight: 800;
+  line-height: 30px;
+  font-weight: 700;
 
   color: #555;
 }
@@ -120,10 +149,13 @@ list-style: disc;
   display: flex;
   flex-direction: column;
   gap: 18px;
+  /* Плашки чуть уже блока миссии, по центру (как в макете) */
+  max-width: 430px;
+  margin: 0 auto;
 }
 
 .card {
-  padding: 30px 40px;
+  padding: 24px 30px;
 
   background: #0f4d82;
   border-radius: 25px;
@@ -132,8 +164,10 @@ list-style: disc;
 
   color: white;
 
+  /* По макету: Calibri Bold 21/28, по центру */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
   font-size: 21px;
-  line-height: 1.6;
+  line-height: 28px;
   font-weight: 700;
 
   white-space: pre-line;
@@ -154,25 +188,8 @@ list-style: disc;
     gap: 50px;
   }
 
-  .block h3 {
-    font-size: 26px;
-  }
-
-  .block p,
-  .block li {
-    font-size: 15px;
-  }
-
   .right {
-    width: 380px;
-  }
-
-  .right h2 {
-    font-size: 28px;
-  }
-
-  .card {
-    font-size: 15px;
+    width: 420px;
   }
 }
 
@@ -211,25 +228,17 @@ list-style: disc;
   }
 
   .block h3 {
-    font-size: 22px;
     margin-bottom: 14px;
-  }
-
-  .block p,
-  .block li {
-    font-size: 14px;
-    line-height: 1.6;
   }
 
   .right {
     width: 100%;
+    padding-top: 0;
   }
 
   .right h2 {
     max-width: 600px;
     margin: 12px auto 32px;
-    font-size: 24px;
-    line-height: 1.35;
   }
 
   .cards {
@@ -240,8 +249,6 @@ list-style: disc;
 
   .card {
     padding: 22px 24px;
-    font-size: 14px;
-    line-height: 1.5;
   }
 }
 
@@ -273,14 +280,15 @@ list-style: disc;
   }
 
   .block h3 {
-    font-size: 21px;
     margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 26px;
   }
 
   .block p,
   .block li {
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 22px;
   }
 
   .block ul {
@@ -290,7 +298,12 @@ list-style: disc;
 
   .right h2 {
     margin: 18px auto 28px;
-    font-size: 21px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .card {
+    font-size: 18px;
     line-height: 24px;
   }
 
@@ -300,9 +313,7 @@ list-style: disc;
   }
 
   .card {
-    padding: 30px 40px;
+    padding: 22px 24px;
     border-radius: 25px;
-    font-size: 16px;
-    
   }
 }

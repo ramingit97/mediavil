@@ -28,6 +28,22 @@
     radial-gradient(circle at 50% var(--origin-y), #fafafa 819px, rgba(30, 30, 30, 0.05) 820px, rgba(30, 30, 30, 0) 876px),
     radial-gradient(circle at 50% var(--origin-y), #fafafa 949px, rgba(30, 30, 30, 0.05) 950px, rgba(30, 30, 30, 0) 1006px),
     radial-gradient(circle at 50% var(--origin-y), #fafafa 1079px, rgba(30, 30, 30, 0.05) 1080px, rgba(30, 30, 30, 0) 1136px);
+  /* Per the reference: the rings read clearly around the center and dissolve
+     towards the edges of the screen. */
+  -webkit-mask-image: radial-gradient(
+    circle at 50% var(--origin-y),
+    #000 340px,
+    rgba(0, 0, 0, 0.5) 620px,
+    rgba(0, 0, 0, 0.15) 850px,
+    transparent 1050px
+  );
+  mask-image: radial-gradient(
+    circle at 50% var(--origin-y),
+    #000 340px,
+    rgba(0, 0, 0, 0.5) 620px,
+    rgba(0, 0, 0, 0.15) 850px,
+    transparent 1050px
+  );
   z-index: 1;
 }
 .content {
@@ -88,11 +104,20 @@
   background: #e30613;
   margin-top: 47px;
   color: white;
-  border-radius: 28px;
-  padding: 15px 34px;
-  font-size: 16px;
+  border-radius: 32px;
+  padding: 19px 42px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnIcon {
+  width: 22px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .link {
@@ -312,15 +337,37 @@
   height: 100%;
   z-index: 2;
   pointer-events: none;
+  /* The dashed path is drawn ~17px INSIDE the filled wave; per the reference
+     the line rides ON TOP of the wave crest — lift it above the fill edge. */
+  transform: translateY(-22px);
 }
 
 .center_svg {
   position: absolute;
-  /* % of .wave_box height so the character tracks the wave at any width */
-  bottom: 59%;
-  left: 62%;
+  /* The character's feet must TOUCH the dashed line at ANY viewport width
+     (client: "лягушка должна сидеть на линии"). The wave svg uses
+     preserveAspectRatio slice: at widths 1282..2896 the box is 250px tall,
+     the svg scale is fixed (250/164 = 1.524) and only the SIDES get cropped
+     symmetrically — so a point at viewBox x maps to
+     screen = 50% + (x*1.524 - 1448)px. Feet sit at vb x≈1126 → +268px. */
+  bottom: 207px;
+  left: calc(50% + 268px);
   transform: translateX(-50%);
   z-index: 9;
+}
+
+.center_svg img {
+  display: block;
+  max-width: none;
+}
+
+@media (max-width: 1281px) {
+  .center_svg {
+    /* Below the 250px cap the whole wave scales with width — back to %
+       (+22px compensates the lifted dashed line) */
+    bottom: calc(74% + 22px);
+    left: 65.5%;
+  }
 }
 
 .wave {
@@ -488,8 +535,13 @@
 
   .btn {
     margin-top: 18px;
-    padding: 12px 22px;
-    font-size: 14px;
+    padding: 14px 26px;
+    font-size: 15px;
+    gap: 9px;
+  }
+
+  .btnIcon {
+    width: 18px;
   }
 
   .link {

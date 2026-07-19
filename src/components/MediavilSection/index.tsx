@@ -1,16 +1,24 @@
+import type { ReactNode } from "react";
 import { Col, Row } from "antd";
 import style from "./mediavilSection.module.css";
 import mic from "@/assets/images/michrophone.png";
 
 function MediavilSection() {
-  const reasons = [
+  const reasons: { title: string; text: ReactNode; wide?: boolean }[] = [
     {
       title: "Огромный охват аудитории",
       text: "Мы размещаем вашу рекламу на радиостанциях, которые люди слушают каждый день по дороге на работу, в машине и дома.",
     },
     {
       title: "Популярные радиостанции",
-      text: "Мы работаем с радиостанциями, входящими в топ по аудитории в России: Европа Плюс, Русское Радио, Дорожное Радио, Ретро FM, Новое Радио и Studio 21.",
+      text: (
+        <>
+          Мы работаем с радиостанциями, входящими в топ по аудитории в России:{" "}
+          <span>Европа Плюс</span>, <span>Русское Радио</span>,{" "}
+          <span>Дорожное Радио</span>, <span>Ретро FM</span>,{" "}
+          <span>Новое Радио</span> и <span>Studio 21</span>.
+        </>
+      ),
     },
     {
       title: "Разные станции — разные аудитории",

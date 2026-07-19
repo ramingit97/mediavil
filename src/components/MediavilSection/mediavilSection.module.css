@@ -1,6 +1,6 @@
 .section {
-  padding: 90px 0;
-  background: #f7f7f7;
+  padding: 120px 0 90px;
+  background: #f9f9f9;
   margin: 0 auto;
 }
 
@@ -19,10 +19,11 @@
 
 .mic {
   position: absolute;
-  right: 0px;
-  top: -50px;
-  width: 450px;
-  z-index: 0;
+  right: 12px;
+  top: -125px;
+  width: 360px;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .wrapper h2 {
@@ -75,6 +76,11 @@
   line-height: 1.55;
 
   color: rgba(255, 255, 255, 0.82);
+}
+
+.card p span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 1200px) {

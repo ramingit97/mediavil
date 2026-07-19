@@ -1,6 +1,7 @@
 import { Col, Row } from "antd";
 import style from "./promoSection.module.css";
 import img1 from "@/assets/images/Rectangle252.png";
+import micTop from "@/assets/images/mic-top.png";
 import img2 from "@/assets/images/Rectangle268.png";
 import img3 from "@/assets/images/Rectangle269.png";
 import img4 from "@/assets/images/Rectangle270.png";
@@ -46,7 +47,11 @@ function PromoSection({ showWave = false }) {
               sm={24}
               md={24}
               lg={card.size === "large" ? 24 : 8}
+              className={card.size === "large" ? style.largeCol : ""}
             >
+              {card.size === "large" && (
+                <img src={micTop} alt="" className={style.micTop} />
+              )}
               <div
                 className={`${style.card} ${card.size === "large" ? style.large : ""}`}
               >
