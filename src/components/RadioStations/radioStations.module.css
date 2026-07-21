@@ -43,16 +43,33 @@
 }
 
 .section h2 {
-  margin: 0 0 55px;
-  color: #064c84;
-  font-size: 26px;
-  font-weight: 800;
+  margin: 0 0 20px;
+  /* По макету: Calibri Bold 42/48, #555553 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  color: #555553;
+  font-size: clamp(28px, 2.43vw, 42px);
+  line-height: 1.14;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.subtitle {
+  margin: 0 auto 50px;
+  max-width: 716px;
+  /* По макету: Calibri Bold 21/28, #555553 op. 0.5 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(15px, 1.215vw, 21px);
+  line-height: 1.33;
+  font-weight: 700;
+  color: rgba(85, 85, 83, 0.5);
   position: relative;
   z-index: 2;
 }
 
 .tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
   margin-bottom: 42px;
@@ -61,18 +78,24 @@
 }
 
 .tab {
-  width: 170px;
-  height: 68px;
+  width: 280px;
+  height: 112px;
+  padding: 15px;
   border: none;
-  border-radius: 12px;
+  border-radius: 20px;
   background: white;
-  font-size: 14px;
+  /* По макету: Calibri Bold 24/26, #555553 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(19px, 1.39vw, 24px);
+  line-height: 1.08;
   font-weight: 700;
+  color: #555553;
   cursor: pointer;
 }
 
 .grid {
-  max-width: 1100px;
+  /* По макету: карточки станций занимают 1520/1900 = 80% (на 1728 ≈ 1380px) */
+  max-width: min(90%, 1380px);
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -132,8 +155,10 @@
 }
 
 .info p {
-  font-size: 14px;
-  line-height: 1.45;
+  /* По макету: Calibri Bold 18/21, по центру */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
   margin-bottom: 24px;
   font-weight: 700;
 }
@@ -143,8 +168,11 @@
   background: white;
   color: blue;
   border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 12px;
+  padding: 2px 15px;
+  /* По макету: Calibri Bold 18/24 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 700;
   cursor: pointer;
 }

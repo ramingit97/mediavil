@@ -35,8 +35,11 @@
   gap: 12px;
 
   cursor: pointer;
-  font-size: 18px;
-  color: #555;
+  /* По макету: Calibri Regular 16/20 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #555553;
   padding: 0;
 }
 
@@ -84,8 +87,11 @@
 
 .nav a {
   text-decoration: none;
-  color: #555;
-  font-size: 14px;
+  /* По макету: Calibri Regular 16/20 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  color: #555553;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .phone {
@@ -95,8 +101,11 @@
 }
 
 .phoneLabel {
-  font-size: 10px;
-  color: #aaa;
+  /* По макету: Calibri Regular 12/15 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(85, 85, 83, 0.5);
 }
 
 .phoneRow {
@@ -111,8 +120,11 @@
 }
 
 .phoneNumber {
-  font-size: 20px;
-  color: #4c4c4c;
+  /* По макету: Calibri Regular 21/26 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 21px;
+  line-height: 26px;
+  color: #555553;
 }
 
 .white {

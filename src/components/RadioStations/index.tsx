@@ -114,6 +114,11 @@ function RadioStationsSection() {
       {/* <img src={vector} alt="" className={style.waveTop} /> */}
       <h2>Наши радиостанции</h2>
 
+      <p className={style.subtitle}>
+        От актуальных мировых хитов до душевного ретро — вещаем на частотах,
+        которые выбирают миллионы слушателей каждый день
+      </p>
+
       <div className={style.tabs}>
         {tabs.map((tab, index) => (
           <button key={index} className={style.tab}>

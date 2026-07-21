@@ -1,16 +1,18 @@
 .section {
-  padding: 120px 0 90px;
+  /* По макету зазор карта → плашка небольшой, волны между ними нет */
+  padding: 30px 0 90px;
   background: #f9f9f9;
   margin: 0 auto;
 }
 
 .wrapper {
   position: relative;
-  width: min(90%, 1280px);
+  /* По макету плашка широкая: 1683/1900 = 88.6% (на 1728 ≈ 1530px) */
+  width: min(90%, 1530px);
   margin: 0 auto;
   padding: 65px 60px 60px;
 
-  background: #0f4d82;
+  background: #09437a;
   border-radius: 18px;
 
   color: white;
@@ -19,9 +21,12 @@
 
 .mic {
   position: absolute;
-  right: 12px;
-  top: -125px;
-  width: 360px;
+  /* По макету микрофон крупнее, высоко торчит над плашкой (наезжая на
+     правую колонку карточек карты) и стоит у правого края — голова не
+     должна закрывать заголовок «5 причин» */
+  right: -70px;
+  top: -270px;
+  width: 500px;
   z-index: 3;
   pointer-events: none;
 }
@@ -30,9 +35,11 @@
   margin: 0 0 18px;
   text-align: center;
 
-  font-size: 34px;
-  line-height: 1.2;
-  font-weight: 800;
+  /* По макету: Calibri Bold 42/48 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(28px, 2.43vw, 42px);
+  line-height: 1.14;
+  font-weight: 700;
 }
 
 .subtitle {
@@ -40,9 +47,12 @@
   max-width: 760px;
 
   text-align: center;
-  font-size: 15px;
-  line-height: 1.6;
+  /* По макету: Calibri Bold 21/28, по центру, #FFFFFFBF (Carlito — клон Calibri) */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 21px;
+  line-height: 28px;
   font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .cards {
@@ -55,7 +65,7 @@
 
   padding: 35px 28px;
 
-  background: #0a3f70;
+  background: #003568;
   border-radius: 16px;
 
   text-align: center;
@@ -64,18 +74,24 @@
 .card h3 {
   margin: 0 0 18px;
 
-  font-size: 22px;
-  line-height: 1.25;
-  font-weight: 800;
+  /* По макету: Calibri Bold 28/30, белый 0.9 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(22px, 1.62vw, 28px);
+  line-height: 1.07;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .card p {
   margin: 0;
 
-  font-size: 15px;
-  line-height: 1.55;
+  /* По макету: Calibri Regular 21/28, белый 0.75 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(16px, 1.215vw, 21px);
+  line-height: 1.33;
+  font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .card p span {
@@ -93,11 +109,11 @@
   }
 
   .wrapper h2 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .subtitle {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 48px;
   }
 
@@ -111,11 +127,11 @@
   }
 
   .card h3 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .card p {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
 
@@ -130,13 +146,13 @@
   }
 
   .wrapper h2 {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .subtitle {
     max-width: 520px;
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.4;
   }
 
   .subtitle br {
@@ -174,10 +190,10 @@
 
   .subtitle {
     margin-bottom: 36px;
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
     z-index: 3;
-    line-height: 1.6;
+    line-height: 1.45;
   }
 
   .mic {

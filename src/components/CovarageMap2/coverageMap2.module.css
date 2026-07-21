@@ -5,7 +5,11 @@
 
 .section {
   background: #f9f9f9;
-  padding: 70px 0 190px;
+  /* The head must scale WITH the map (83.4% width): every vertical/px value
+     in the overlay is design-px/17.28 vw, capped at the 1728 design value —
+     otherwise a fixed-px head drifts over Sakhalin as the window narrows.
+     Волна снизу убрана по макету — секция просто уходит в тот же фон. */
+  padding: clamp(48px, 4.05vw, 70px) 0 110px;
   /* Tall enough to show the whole map (map height = 83.4vw / 1.461) */
   min-height: 59vw;
 
@@ -50,51 +54,72 @@
 }
 
 .head h2 {
-  margin: 0 0 16px;
-  font-size: 32px;
-  font-weight: 800;
-  color: #0f4d82;
+  margin: 0 0 clamp(11px, 0.93vw, 16px);
+  /* По макету: Calibri Bold 42/48, #555553 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(28px, 2.43vw, 42px);
+  line-height: 1.14;
+  font-weight: 700;
+  color: #555553;
 }
 
 .subtitle {
-  margin: 0 0 55px;
-  font-size: 15px;
-  line-height: 1.6;
-  font-weight: 600;
-  color: #8f8f8f;
+  margin: 0 0 clamp(38px, 3.18vw, 55px);
+  /* По макету: Calibri Bold 21/28, #555553 op. 0.5 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(15px, 1.215vw, 21px);
+  line-height: 1.33;
+  font-weight: 700;
+  color: rgba(85, 85, 83, 0.5);
 }
 
 .tabs {
   display: flex;
   justify-content: center;
-  gap: 44px;
+  gap: clamp(50px, 4.63vw, 80px);
+  /* Табы НИЖЕ точки Южно-Сахалинска, зазор 120px по просьбе клиента
+     (значение СХЛОПЫВАЕТСЯ с margin-bottom подзаголовка 55px — это полный
+     зазор, а не добавка). Ось 62% (шапка на 67%, поэтому сдвиг -5vw). */
+  margin-top: 120px;
   margin-bottom: 55px;
+  transform: translateX(-5vw);
 }
 
+/* По макету: иконка 30x30 НАД текстом, колонкой, gap 5 */
 .tabs button {
   border: none;
   background: transparent;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 9px;
+  gap: 5px;
 
-  font: inherit;
-  font-size: 17px;
-  font-weight: 800;
+  /* По макету: Calibri Regular 21/28, по центру (Carlito — клон Calibri) */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(15px, 1.215vw, 21px);
+  line-height: 1.33;
+  font-weight: 400;
   color: #a5a5a5;
 
+  padding: 0;
+  cursor: pointer;
+}
+
+.tabs button span {
   padding: 0 2px 7px;
   border-bottom: 2px dashed transparent;
-  cursor: pointer;
 }
 
 .tabs .active {
   color: #e30613;
+}
+
+.tabs .active span {
   border-bottom-color: currentColor;
 }
 
 .tabIcon {
-  width: 20px;
+  width: clamp(20px, 1.74vw, 30px);
   height: auto;
   flex-shrink: 0;
 }
@@ -108,7 +133,9 @@
   z-index: 5;
 
   margin-left: 25.5%;
-  margin-top: 200px;
+  /* 200px минус сдвиг табов вниз (колонка выше строки + margin-top),
+     чтобы карточки городов остались на прежнем месте */
+  margin-top: clamp(74px, 6.13vw, 106px);
   width: 68.5%;
 
   display: grid;
@@ -133,29 +160,30 @@
   transform: translateX(26px);
 }
 
+/* По макету: герб 50px, зазор до названия 10, от названия до строк 20 */
 .icon {
-  height: 46px;
+  height: 50px;
   width: auto;
-  max-width: 100px;
+  max-width: 110px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 }
 
 .stationsGrid .icon {
-  height: 54px;
+  height: 70px;
 }
 
 .card h3 {
-  margin: 0 0 14px;
+  margin: 0 0 20px;
   /* По макету: Calibri Bold 28/30, по центру (Carlito — клон для не-Windows) */
   font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
-  font-size: 28px;
-  line-height: 30px;
+  font-size: clamp(20px, 1.62vw, 28px);
+  line-height: 1.07;
   font-weight: 700;
   letter-spacing: 0;
   text-align: center;
-  color: #0f4d82;
+  color: #09437a;
   white-space: pre-line;
 }
 
@@ -169,44 +197,23 @@
   margin-bottom: 2px;
   /* По макету: Calibri Bold 21/28, по центру */
   font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
-  font-size: 21px;
-  line-height: 28px;
+  font-size: clamp(15px, 1.215vw, 21px);
+  line-height: 1.33;
   font-weight: 700;
   letter-spacing: 0;
   text-align: center;
-  color: #454545;
+  color: #555553;
 }
 
 .card li b {
   font-weight: 700;
 }
 
+/* Частота — по макету Calibri Regular, #555553 op. 0.5 */
 .card li span {
   margin-left: 7px;
-  color: #9a9a9a;
-}
-
-.wave_box {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 164px;
-}
-
-.waveSvg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.dashed_svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
+  font-weight: 400;
+  color: rgba(85, 85, 83, 0.5);
 }
 
 /* Below the wide desktop the overlay doesn't fit — stack the map above the
@@ -214,7 +221,7 @@
 @media (max-width: 1200px) {
   .section {
     min-height: auto;
-    padding: 60px 0 150px;
+    padding: 60px 0 90px;
   }
 
   .mapBg {
@@ -230,20 +237,22 @@
   }
 
   .head h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .subtitle {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .tabs {
     gap: 30px;
+    margin-top: 0;
     margin-bottom: 44px;
+    transform: none;
   }
 
   .tabs button {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .cards {
@@ -261,6 +270,17 @@
 
   .yuzhno {
     transform: none;
+  }
+
+  /* В стековой раскладке колонки широкие — держим макетные размеры */
+  .card h3 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  .card li {
+    font-size: 21px;
+    line-height: 28px;
   }
 }
 
@@ -303,7 +323,7 @@
   }
 
   .tabs button {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .tabIcon {

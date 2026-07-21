@@ -31,7 +31,11 @@
 
 .item p {
   margin: 0;
-  font-size: 14px;
+  /* По макету: Gilroy Medium 21/25 (500 в "Mediavil Sans" = Montserrat-замена) */
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #404040;
 }
 
 @keyframes scroll {

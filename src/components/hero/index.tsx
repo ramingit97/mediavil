@@ -11,7 +11,7 @@ import Navbar from "@/components/navbar";
 import AudioIcon from "@/assets/icons/audio.svg?react";
 import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
-import frogMascot from "@/assets/images/frog-mascot.png";
+import frogMascot from "@/assets/images/frog-mascot.svg";
 
 function HeroSection() {
   return (

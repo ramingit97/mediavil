@@ -1,7 +1,5 @@
 import { useState } from "react";
 import style from "./coverageMap2.module.css";
-import CoverageDashedWaveIcon from "@/assets/icons/CoverageDashedWaveIcon";
-import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 import SunIcon from "@/assets/icons/SunIcon";
 import AudioIcon from "@/assets/icons/audio.svg?react";
 
@@ -28,15 +26,17 @@ type Entry = {
   items: { name: string; freq: string }[];
 };
 
-/* Red city markers, in % of the map image (1584x1084). */
+/* Red city markers, in % of the map image (1584x1084).
+   Координаты = центры кружков-маркеров, нарисованных на самой карте
+   (у Партизанска маркера/подписи на карте нет — точка по макету). */
 const dots = [
-  { left: 36.0, top: 6.4 }, // Хабаровск
-  { left: 91.8, top: 31.5 }, // Южно-Сахалинск
-  { left: 23.5, top: 74.5 }, // Арсеньев
-  { left: 13.3, top: 79.5 }, // Уссурийск
-  { left: 20.5, top: 87.0 }, // Партизанск
-  { left: 12.4, top: 89.6 }, // Владивосток
-  { left: 19.5, top: 94.0 }, // Находка
+  { left: 35.2, top: 6.4 }, // Хабаровск
+  { left: 88.3, top: 30.4 }, // Южно-Сахалинск
+  { left: 21.9, top: 73.2 }, // Арсеньев
+  { left: 12.2, top: 78.6 }, // Уссурийск
+  { left: 20.5, top: 87.7 }, // Партизанск
+  { left: 11.7, top: 88.7 }, // Владивосток
+  { left: 19.1, top: 93.0 }, // Находка
 ];
 
 function CoverageMapSection() {
@@ -170,7 +170,7 @@ function CoverageMapSection() {
             onClick={() => setActiveTab("cities")}
           >
             <SunIcon className={style.tabIcon} />
-            По городам
+            <span>По городам</span>
           </button>
 
           <button
@@ -178,7 +178,7 @@ function CoverageMapSection() {
             onClick={() => setActiveTab("stations")}
           >
             <AudioIcon className={style.tabIcon} />
-            По радиостанциям
+            <span>По радиостанциям</span>
           </button>
         </div>
       </div>
@@ -209,11 +209,6 @@ function CoverageMapSection() {
             </ul>
           </div>
         ))}
-      </div>
-
-      <div className={style.wave_box}>
-        <WaveSectionIcon className={style.waveSvg} fill="#f9f9f9" />
-        <CoverageDashedWaveIcon className={style.dashed_svg} />
       </div>
     </section>
   );

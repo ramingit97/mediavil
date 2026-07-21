@@ -15,16 +15,22 @@
 }
 
 .title {
-  font-size: 15px;
+  /* По макету: Gilroy SemiBold 18/21 op. 0.5 (600 = Montserrat-замена) */
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
   margin-bottom: 22px;
-  color: #8a8a8a;
+  color: rgba(85, 85, 83, 0.5);
 }
 
 .text {
-  font-size: 13px;
-  line-height: 1.45;
+  /* По макету: Calibri Regular 18/22, #555553 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #555553;
   margin: 0 auto 22px;
-  max-width: 760px;
+  max-width: 923px;
 }
 
 .cities {
@@ -33,13 +39,19 @@
 }
 
 .city {
-  font-size: 12px;
+  /* По макету: Calibri Regular 18/22, #555553 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #555553;
 }
 
 .city h4 {
   margin: 0 0 8px;
-  color: #555;
-  font-size: 13px;
+  /* По макету: Calibri Bold 18/22 */
+  color: #555553;
+  font-size: 18px;
+  line-height: 22px;
   font-weight: 700;
 }
 
@@ -52,14 +64,18 @@
   display: flex;
   justify-content: center;
   gap: 28px;
-  font-size: 12px;
-  color: #a0a0a0;
+  /* По макету: Gilroy Medium 16/19 op. 0.5 (500 = Montserrat-замена) */
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+  color: rgba(85, 85, 83, 0.5);
   margin-bottom: 18px;
 }
 
 .link {
-  font-size: 12px;
-  color: #aaa;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(85, 85, 83, 0.5);
   margin: 0;
 }
 
@@ -77,13 +93,13 @@
   }
 
   .title {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .text {
     max-width: 680px;
-    font-size: 12px;
-    line-height: 1.55;
+    font-size: 16px;
+    line-height: 1.4;
   }
 
   .cities {
@@ -92,16 +108,16 @@
   }
 
   .city h4 {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .city p {
-    font-size: 11px;
+    font-size: 15px;
   }
 
   .bottom {
     gap: 22px;
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 
@@ -120,14 +136,14 @@
   }
 
   .title {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.5;
   }
 
   .text {
     max-width: 540px;
-    font-size: 11px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.5;
     margin-bottom: 18px;
   }
 
@@ -137,11 +153,11 @@
   }
 
   .city {
-    font-size: 11px;
+    font-size: 15px;
   }
 
   .city h4 {
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 6px;
   }
 
@@ -152,11 +168,11 @@
   .bottom {
     flex-wrap: wrap;
     gap: 12px 18px;
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .link {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 
@@ -175,15 +191,15 @@
   }
 
   .title {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.45;
     margin-bottom: 24px;
   }
 
   .text {
-    font-size: 11px;
-    line-height: 1.55;
-    max-width: 285px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 300px;
     margin-bottom: 22px;
   }
 
@@ -194,11 +210,11 @@
 
   .city {
     margin-bottom: 22px;
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .city h4 {
-    font-size: 11px;
+    font-size: 14px;
     margin-bottom: 8px;
   }
 
@@ -210,11 +226,11 @@
   .bottom {
     flex-direction: column;
     gap: 5px;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 16px;
   }
 
   .link {
-    font-size: 10px;
+    font-size: 12px;
   }
 }

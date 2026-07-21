@@ -42,7 +42,8 @@
 }
 
 .wrapper {
-  width: min(90%, 1280px);
+  /* По макету промо-область 1600/1900 = 84.2% (на 1728 ≈ 1455px) */
+  width: min(90%, 1455px);
   margin: 0 auto;
   padding-top: 70px;
   position: relative;
@@ -127,10 +128,12 @@
 
   border-radius: 999px;
 
-  padding: 5px 12px;
+  padding: 5px 15px;
 
-  font-size: 10px;
-  font-weight: 700;
+  /* По макету: Gilroy SemiBold 16/16 (600 в "Mediavil Sans" = Montserrat) */
+  font-size: clamp(12px, 0.93vw, 16px);
+  line-height: 1;
+  font-weight: 600;
 
   margin-bottom: 10px;
 }
@@ -138,13 +141,17 @@
 .content h3 {
   margin: 0 0 26px;
 
-  font-size: 28px;
-  line-height: 1.15;
-  font-weight: 800;
+  /* По макету: Calibri Bold 42/48 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(30px, 2.43vw, 42px);
+  line-height: 1.14;
+  font-weight: 700;
 }
 
 .card:not(.large) h3 {
-  font-size: 21px;
+  /* По макету: Calibri Bold 32/36 */
+  font-size: clamp(24px, 1.85vw, 32px);
+  line-height: 1.125;
   margin-bottom: 24px;
 }
 
@@ -152,21 +159,25 @@
   border: none;
 
   background: white;
-  color: #064c84;
+  color: #09437a;
 
   border-radius: 999px;
 
-  padding: 13px 28px;
+  padding: 15px 34px;
 
-  font-size: 14px;
-  font-weight: 800;
+  /* По макету: Calibri Bold 28 */
+  font-family: Calibri, "Carlito", "Mediavil Sans", sans-serif;
+  font-size: clamp(20px, 1.62vw, 28px);
+  font-weight: 700;
 
   cursor: pointer;
 }
 
 .card:not(.large) button {
-  padding: 10px 20px;
-  font-size: 12px;
+  padding: 10px 24px;
+  /* По макету: Calibri Bold 18/24 */
+  font-size: 18px;
+  line-height: 24px;
 }
 
 
@@ -204,30 +215,30 @@
   }
 
   .badge {
-    font-size: 9px;
+    font-size: 12px;
     padding: 5px 10px;
     margin-bottom: 10px;
   }
 
   .content h3 {
-    font-size: 22px;
+    font-size: 28px;
     line-height: 1.15;
     margin-bottom: 18px;
   }
 
   .card:not(.large) h3 {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 16px;
   }
 
   .content button {
-    padding: 11px 22px;
-    font-size: 12px;
+    padding: 11px 24px;
+    font-size: 16px;
   }
 
   .card:not(.large) button {
     padding: 10px 18px;
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
