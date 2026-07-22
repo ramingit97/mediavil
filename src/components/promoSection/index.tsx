@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Col, Row } from "antd";
 import style from "./promoSection.module.css";
 import img1 from "@/assets/images/Rectangle252.png";
@@ -5,8 +6,11 @@ import micTop from "@/assets/images/mic-top.png";
 import img2 from "@/assets/images/Rectangle268.png";
 import img3 from "@/assets/images/Rectangle269.png";
 import img4 from "@/assets/images/Rectangle270.png";
+import ConsultModal from "@/components/consultModal";
 
 function PromoSection({ showWave = false }) {
+  const [consultOpen, setConsultOpen] = useState(false);
+
   const cards = [
     {
       size: "large",
@@ -14,6 +18,7 @@ function PromoSection({ showWave = false }) {
       badge: "более 350 000 слушателей прямо сейчас",
       title: "Разместите свою рекламу на топовых радиостанциях России",
       buttonText: "Получите медиакит",
+      consult: true,
     },
     {
       image: img2,
@@ -62,13 +67,21 @@ function PromoSection({ showWave = false }) {
                 <div className={style.content}>
                   <span className={style.badge}>{card.badge}</span>
                   <h3>{card.title}</h3>
-                  <button>{card.buttonText}</button>
+                  <button
+                    onClick={
+                      card.consult ? () => setConsultOpen(true) : undefined
+                    }
+                  >
+                    {card.buttonText}
+                  </button>
                 </div>
               </div>
             </Col>
           ))}
         </Row>
       </div>
+
+      <ConsultModal open={consultOpen} onClose={() => setConsultOpen(false)} />
     </section>
   );
 }

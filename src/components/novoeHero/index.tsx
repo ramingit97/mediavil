@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import style from "./novoeHero.module.css";
 
@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import PlayIcon from "@/assets/icons/play.svg?react";
 import AudioIcon from "@/assets/icons/audio.svg?react";
 import type { FrequencyItem } from "@/components/types/type";
+import ConsultModal from "@/components/consultModal";
 
 export interface InfoCard {
   label: string;
@@ -50,6 +51,8 @@ function NovoeHero({
     playBg: "#555553",
   },
 }: NovoeHeroProps) {
+  const [consultOpen, setConsultOpen] = useState(false);
+
   return (
     <section
       className={style.page}
@@ -93,7 +96,10 @@ function NovoeHero({
             ))}
 
             <div className={style.btnCell}>
-              <button className={style.mediaBtn}>
+              <button
+                className={style.mediaBtn}
+                onClick={() => setConsultOpen(true)}
+              >
                 <AudioIcon className={style.audioIcon} />
                 Запросить медиакит
               </button>
@@ -145,6 +151,8 @@ function NovoeHero({
           ))}
         </div>
       )}
+
+      <ConsultModal open={consultOpen} onClose={() => setConsultOpen(false)} />
     </section>
   );
 }

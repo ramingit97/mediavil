@@ -1,3 +1,4 @@
+import { useState } from "react";
 import style from "./hero.module.css";
 import studioIcon from "@/assets/images/logo-studio.png";
 import RetroIcon from "@/assets/images/logo-retro.png";
@@ -12,8 +13,11 @@ import AudioIcon from "@/assets/icons/audio.svg?react";
 import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
 import frogMascot from "@/assets/images/frog-mascot.svg";
+import ConsultModal from "@/components/consultModal";
 
 function HeroSection() {
+  const [consultOpen, setConsultOpen] = useState(false);
+
   return (
     <section className={style.hero}>
       <Navbar variant="gray" />
@@ -62,12 +66,19 @@ function HeroSection() {
           </div>
         </div>
 
-        <button className={style.btn}>
+        <button className={style.btn} onClick={() => setConsultOpen(true)}>
           <AudioIcon className={style.btnIcon} />
           Запросить медиакит
         </button>
 
-        <a href="#" className={style.link}>
+        <a
+          href="#"
+          className={style.link}
+          onClick={(e) => {
+            e.preventDefault();
+            setConsultOpen(true);
+          }}
+        >
           Получить консультацию
         </a>
       </div>
@@ -83,6 +94,8 @@ function HeroSection() {
         </div>
         <DashedWaveIcon className={style.dashed_svg} />
       </div>
+
+      <ConsultModal open={consultOpen} onClose={() => setConsultOpen(false)} />
     </section>
   );
 }

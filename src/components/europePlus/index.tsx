@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import style from "./europePlus.module.css";
 
@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import type { MainDetails } from "@/components/types/type";
 import PlayIcon from "@/assets/icons/play.svg?react";
 import AudioIcon from "@/assets/icons/audio.svg?react";
+import ConsultModal from "@/components/consultModal";
 
 function EuropePlus({
   title,
@@ -27,6 +28,8 @@ function EuropePlus({
     navShadow: "rgba(85, 85, 83, 0.75)",
   },
 }: MainDetails) {
+  const [consultOpen, setConsultOpen] = useState(false);
+
   return (
     <section
       className={style.page}
@@ -62,7 +65,10 @@ function EuropePlus({
             <b>«{title}»</b> — {description}
           </p>
 
-          <button className={style.mediaBtn}>
+          <button
+            className={style.mediaBtn}
+            onClick={() => setConsultOpen(true)}
+          >
             <AudioIcon className={style.audioIcon} />
             Запросить медиакит
           </button>
@@ -132,6 +138,8 @@ function EuropePlus({
           </div>
         </div>
       </div>
+
+      <ConsultModal open={consultOpen} onClose={() => setConsultOpen(false)} />
     </section>
   );
 }

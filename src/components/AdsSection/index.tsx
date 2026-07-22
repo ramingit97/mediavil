@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Col, Row } from "antd";
 import style from "./adsSection.module.css";
 import HeadphoneIcon from "@/assets/icons/HeadphoneIcon";
 import WaveSectionIcon from "@/assets/icons/WaveSectionIcon";
 import PlayIcon from "@/assets/icons/play.svg?react";
 import DashedWaveIcon from "@/assets/icons/DashedWaveIcon";
+import ConsultModal from "@/components/consultModal";
 
 type AdsColors = {
   pageBg?: string;
@@ -15,6 +17,8 @@ function AdsSection({
   colors = { pageBg: "#ffffff", btnColor: "#000000", consultBtn: "#fff" },
   stationName = "Европа Плюс",
 }: { colors?: AdsColors; stationName?: string }) {
+  const [consultOpen, setConsultOpen] = useState(false);
+
   const cards = [
     {
       title: "Рекламный аудиоролик",
@@ -79,7 +83,10 @@ function AdsSection({
         </Row>
       </div>
 
-      <button className={style.consultBtn}>
+      <button
+        className={style.consultBtn}
+        onClick={() => setConsultOpen(true)}
+      >
         Получить консультацию менеджера
       </button>
 
@@ -95,6 +102,8 @@ function AdsSection({
         </div>
         <DashedWaveIcon className={style.dashed_svg} />
       </div>
+
+      <ConsultModal open={consultOpen} onClose={() => setConsultOpen(false)} />
     </section>
   );
 }
